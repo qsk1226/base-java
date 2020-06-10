@@ -16,9 +16,6 @@ import java.util.Map;
 public class FlyweightFactory {
 	private Map<Character, Flyweight> files = new HashMap<>();
 
-	/**
-	 *
-	 */
 	public Flyweight factory(Character state) {
 		//先从缓存中查找对象
 		Flyweight fly = files.get(state);

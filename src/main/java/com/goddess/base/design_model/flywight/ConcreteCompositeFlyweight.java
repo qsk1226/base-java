@@ -18,13 +18,13 @@ import java.util.Map;
  **/
 public class ConcreteCompositeFlyweight implements Flyweight {
 
-	private Map<Character, Flyweight> files = new HashMap<>();
+	private Map<Character, Flyweight> flyweightMap = new HashMap<>();
 
 	/**
 	 * 增加一个新的单纯享元对象到聚集中
 	 */
 	public void add(Character key, Flyweight fly) {
-		files.put(key, fly);
+		flyweightMap.put(key, fly);
 	}
 
 	/**
@@ -33,8 +33,8 @@ public class ConcreteCompositeFlyweight implements Flyweight {
 	@Override
 	public void operation(String state) {
 		Flyweight fly = null;
-		for (Object o : files.keySet()) {
-			fly = files.get(o);
+		for (Object o : flyweightMap.keySet()) {
+			fly = flyweightMap.get(o);
 			fly.operation(state);
 		}
 

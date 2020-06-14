@@ -2,6 +2,7 @@ package com.goddess.base.design_model.singleton;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * 使用容器来实现单例模式
  *

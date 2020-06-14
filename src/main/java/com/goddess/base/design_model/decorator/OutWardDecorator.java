@@ -13,12 +13,12 @@ public class OutWardDecorator extends AbsDecorator {
 
 	@Override
 	public String getDescription() {
-		return super.getDescription() +" 重新喷漆";
+		return super.getDescription() + " 重新喷漆";
 	}
 
 	@Override
 	public double cost() {
-		return super.cost()+10000;
+		return super.cost() + 10000;
 	}
 
 	@Override

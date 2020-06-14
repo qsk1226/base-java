@@ -6,7 +6,7 @@ package com.goddess.base.design_model.adapter;
  * @author qinshengke
  * @since 2020/6/9 20:31
  **/
-public class AndroidChargeAdapter extends TraditionalChargeImpl implements TypeCCharge{
+public class AndroidChargeAdapter extends TraditionalChargeImpl implements TypeCCharge {
 
 	@Override
 	public void chargeWithTypeC() {

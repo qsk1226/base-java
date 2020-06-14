@@ -11,37 +11,37 @@ import java.util.concurrent.Executors;
  **/
 public class ThreadUnsafe {
 
-    static class UseThreadUnsafe implements Runnable {
-        private int value;
+	static class UseThreadUnsafe implements Runnable {
+		private int value;
 
-        UseThreadUnsafe(int value) {
-            this.value = value;
-        }
+		UseThreadUnsafe(int value) {
+			this.value = value;
+		}
 
-        @Override
-        public void run() {
-            Object o = ThreadLocalContext.get();
-            if (o == null) {
-                ThreadLocalContext.set(value+1);
-            }
-            System.out.println(Thread.currentThread().getName()+" 线程局部变量表：" + ThreadLocalContext.get());
-            //ThreadLocalContext.remove();
-        }
-    }
+		@Override
+		public void run() {
+			Object o = ThreadLocalContext.get();
+			if (o == null) {
+				ThreadLocalContext.set(value + 1);
+			}
+			System.out.println(Thread.currentThread().getName() + " 线程局部变量表：" + ThreadLocalContext.get());
+			//ThreadLocalContext.remove();
+		}
+	}
 
 
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        try {
-            for (int i = 0; i < 6; i++) {
-                executorService.execute(new UseThreadUnsafe(i));
-            }
-            System.out.println("pool execute over");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            executorService.shutdown();
-        }
-    }
+	public static void main(String[] args) {
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		try {
+			for (int i = 0; i < 6; i++) {
+				executorService.execute(new UseThreadUnsafe(i));
+			}
+			System.out.println("pool execute over");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			executorService.shutdown();
+		}
+	}
 
 }

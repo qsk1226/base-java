@@ -8,33 +8,33 @@ package com.goddess.base.classloader;
  **/
 public class StaticDispatch {
 
-    abstract static class Human {
-    }
+	abstract static class Human {
+	}
 
-    static class Man extends Human {
-    }
+	static class Man extends Human {
+	}
 
-    static class Woman extends Human {
-    }
+	static class Woman extends Human {
+	}
 
-    public void sayHello(Human human) {
-        System.out.println("Hello human");
-    }
+	public void sayHello(Human human) {
+		System.out.println("Hello human");
+	}
 
-    public void sayHello(Man man) {
-        System.out.println("Hello man");
-    }
+	public void sayHello(Man man) {
+		System.out.println("Hello man");
+	}
 
-    public void sayHello(Woman man) {
-        System.out.println("Hello woman");
-    }
+	public void sayHello(Woman man) {
+		System.out.println("Hello woman");
+	}
 
-    public static void main(String[] args) {
-        Human man = new Man();
-        Human woman = new Woman();
+	public static void main(String[] args) {
+		Human man = new Man();
+		Human woman = new Woman();
 
-        StaticDispatch staticDispatch = new StaticDispatch();
-        staticDispatch.sayHello(man);
-        staticDispatch.sayHello(woman);
-    }
+		StaticDispatch staticDispatch = new StaticDispatch();
+		staticDispatch.sayHello(man);
+		staticDispatch.sayHello(woman);
+	}
 }

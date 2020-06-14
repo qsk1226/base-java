@@ -19,11 +19,11 @@ public class EngineDecorator extends AbsDecorator {
 
 	@Override
 	public String getDescription() {
-		return super.getDescription() +" 更换V8发动机";
+		return super.getDescription() + " 更换V8发动机";
 	}
 
 	@Override
 	public double cost() {
-		return super.cost()+ 100000;
+		return super.cost() + 100000;
 	}
 }

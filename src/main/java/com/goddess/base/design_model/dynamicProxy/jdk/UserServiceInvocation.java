@@ -13,20 +13,20 @@ import java.lang.reflect.Method;
  **/
 @Slf4j
 public class UserServiceInvocation implements InvocationHandler {
-    private Object realObj;
+	private Object realObj;
 
-    public UserServiceInvocation(Object realObj) {
-        super();
-        this.realObj = realObj;
-    }
+	public UserServiceInvocation(Object realObj) {
+		super();
+		this.realObj = realObj;
+	}
 
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        if (args == null)
-            throw new IllegalArgumentException("args can not be null~");
-        Object invoke = method.invoke(realObj, args);
-        log.info("代理方法执行完成");
-        return invoke;
+	@Override
+	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		if (args == null)
+			throw new IllegalArgumentException("args can not be null~");
+		Object invoke = method.invoke(realObj, args);
+		log.info("代理方法执行完成");
+		return invoke;
 
-    }
+	}
 }

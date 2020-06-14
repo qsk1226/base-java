@@ -12,10 +12,11 @@ public class HelloService {
 		System.out.println("hello, Lily");
 	}
 
-	public void saySb(){
+	public void saySb() {
 		System.out.println("Sb");
 	}
-	public void sayNinHao(){
+
+	public void sayNinHao() {
 		System.out.println("您好");
 	}
 

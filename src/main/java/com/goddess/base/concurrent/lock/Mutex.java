@@ -18,80 +18,80 @@ import java.util.concurrent.locks.Lock;
  **/
 class Mutex implements Lock, java.io.Serializable {
 
-    // 内部AQS工具类
-    private static class Sync extends AbstractQueuedSynchronizer {
-        //是否是锁定状态
-        protected boolean isHeldExclusively() {
-            return getState() == 1;
-        }
+	// 内部AQS工具类
+	private static class Sync extends AbstractQueuedSynchronizer {
+		//是否是锁定状态
+		protected boolean isHeldExclusively() {
+			return getState() == 1;
+		}
 
-        // 如果state==0 尝试获取锁
-        public boolean tryAcquire(int acquires) {
-            assert acquires == 1;
-            if (compareAndSetState(0, 1)) {
-                setExclusiveOwnerThread(Thread.currentThread());
-                return true;
-            }
-            return false;
-        }
+		// 如果state==0 尝试获取锁
+		public boolean tryAcquire(int acquires) {
+			assert acquires == 1;
+			if (compareAndSetState(0, 1)) {
+				setExclusiveOwnerThread(Thread.currentThread());
+				return true;
+			}
+			return false;
+		}
 
-        // 将state设置为 0 以释放锁
-        protected boolean tryRelease(int releases) {
-            assert releases == 1;
-            if (getState() == 0) {
-                throw new IllegalMonitorStateException();
-            }
-            //当前线程设置为null
-            setExclusiveOwnerThread(null);
-            // 设置锁定状态为 0
-            setState(0);
-            return true;
-        }
+		// 将state设置为 0 以释放锁
+		protected boolean tryRelease(int releases) {
+			assert releases == 1;
+			if (getState() == 0) {
+				throw new IllegalMonitorStateException();
+			}
+			//当前线程设置为null
+			setExclusiveOwnerThread(null);
+			// 设置锁定状态为 0
+			setState(0);
+			return true;
+		}
 
-        // 提供条件类
-        Condition newCondition() {
-            return new ConditionObject();
-        }
+		// 提供条件类
+		Condition newCondition() {
+			return new ConditionObject();
+		}
 
-        // Deserializes properly
-        private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
-            s.defaultReadObject();
-            setState(0);
-        }
-    }
+		// Deserializes properly
+		private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+			s.defaultReadObject();
+			setState(0);
+		}
+	}
 
-    // The sync object does all the hard work. We just forward to it.
-    private final Sync sync = new Sync();
+	// The sync object does all the hard work. We just forward to it.
+	private final Sync sync = new Sync();
 
-    public void lock() {
-        sync.acquire(1);
-    }
+	public void lock() {
+		sync.acquire(1);
+	}
 
-    public boolean tryLock() {
-        return sync.tryAcquire(1);
-    }
+	public boolean tryLock() {
+		return sync.tryAcquire(1);
+	}
 
-    public void unlock() {
-        sync.release(1);
-    }
+	public void unlock() {
+		sync.release(1);
+	}
 
-    public Condition newCondition() {
-        return sync.newCondition();
-    }
+	public Condition newCondition() {
+		return sync.newCondition();
+	}
 
-    public boolean isLocked() {
-        return sync.isHeldExclusively();
-    }
+	public boolean isLocked() {
+		return sync.isHeldExclusively();
+	}
 
-    public boolean hasQueuedThreads() {
-        return sync.hasQueuedThreads();
-    }
+	public boolean hasQueuedThreads() {
+		return sync.hasQueuedThreads();
+	}
 
-    public void lockInterruptibly() throws InterruptedException {
-        sync.acquireInterruptibly(1);
-    }
+	public void lockInterruptibly() throws InterruptedException {
+		sync.acquireInterruptibly(1);
+	}
 
-    public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
-        return sync.tryAcquireNanos(1, unit.toNanos(timeout));
-    }
+	public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
+		return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+	}
 }

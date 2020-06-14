@@ -14,13 +14,13 @@ import java.lang.reflect.Method;
 public class HelloInterceptor extends AbstractAdviceInterceptor {
 
 	@Override
-	void preExecute(MethodProxy proxy,Object object, Method method, Object[] args) {
-		System.out.println("----------> class: "+proxy.getSuperName()+"  methodName " + method.getName() + " pre operation:");
+	void preExecute(MethodProxy proxy, Object object, Method method, Object[] args) {
+		System.out.println("----------> class: " + proxy.getSuperName() + "  methodName " + method.getName() + " pre operation:");
 	}
 
 	@Override
-	void afterExecute(MethodProxy proxy,Object object, Method method, Object[] args) {
-		System.out.println("----------> class: "+proxy.getSuperName()+"  methodName " + method.getName() + " after operation:");
+	void afterExecute(MethodProxy proxy, Object object, Method method, Object[] args) {
+		System.out.println("----------> class: " + proxy.getSuperName() + "  methodName " + method.getName() + " after operation:");
 		System.out.println("");
 	}
 

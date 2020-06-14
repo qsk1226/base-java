@@ -12,34 +12,36 @@ import java.lang.reflect.Proxy;
  **/
 public class DynamicProxyTest {
 
-    interface IHello{
-        void sayHello();
-    }
+	interface IHello {
+		void sayHello();
+	}
 
-    static class Hello implements IHello {
-        @Override
-        public void sayHello() {
-            System.out.println("Hello world");
-        }
-    }
+	static class Hello implements IHello {
+		@Override
+		public void sayHello() {
+			System.out.println("Hello world");
+		}
+	}
 
-    static class DynamicProxy implements InvocationHandler {
-        Object originalObj;
-        Object bind(Object originalObj) {
-            this.originalObj = originalObj;
-            return Proxy.newProxyInstance(originalObj.getClass().getClassLoader(), originalObj.getClass().getInterfaces(), this);
-        }
-        @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("welcom ");
-            return method.invoke(originalObj, args);
-        }
+	static class DynamicProxy implements InvocationHandler {
+		Object originalObj;
 
-    }
+		Object bind(Object originalObj) {
+			this.originalObj = originalObj;
+			return Proxy.newProxyInstance(originalObj.getClass().getClassLoader(), originalObj.getClass().getInterfaces(), this);
+		}
+
+		@Override
+		public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+			System.out.println("welcom ");
+			return method.invoke(originalObj, args);
+		}
+
+	}
 
 
-    public static void main(String[] args) {
-        IHello iHello = (IHello) new DynamicProxy().bind(new Hello());
-        iHello.sayHello();
-    }
+	public static void main(String[] args) {
+		IHello iHello = (IHello) new DynamicProxy().bind(new Hello());
+		iHello.sayHello();
+	}
 }

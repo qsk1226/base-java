@@ -8,27 +8,27 @@ package com.goddess.base.classloader;
  **/
 public class DynamicDispatch {
 
-    abstract static class Human {
-        public abstract void sayHello();
-    }
+	abstract static class Human {
+		public abstract void sayHello();
+	}
 
-    static class Man extends Human {
-        public void sayHello() {
-            System.out.println("Hello man");
-        }
-    }
+	static class Man extends Human {
+		public void sayHello() {
+			System.out.println("Hello man");
+		}
+	}
 
-    static class Woman extends Human {
-        public void sayHello() {
-            System.out.println("Hello woman");
-        }
-    }
+	static class Woman extends Human {
+		public void sayHello() {
+			System.out.println("Hello woman");
+		}
+	}
 
 
-    public static void main(String[] args) {
-        Human man = new Man();
-        Human woman = new Woman();
-        man.sayHello();
-        woman.sayHello();
-    }
+	public static void main(String[] args) {
+		Human man = new Man();
+		Human woman = new Woman();
+		man.sayHello();
+		woman.sayHello();
+	}
 }

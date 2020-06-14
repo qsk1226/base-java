@@ -6,7 +6,7 @@ package com.goddess.base.design_model.decorator;
  * @author qinshengke
  * @since 2020/6/12 11:36
  **/
-public class NormalCar extends AbsCar{
+public class NormalCar extends AbsCar {
 
 	@Override
 	public String getDescription() {

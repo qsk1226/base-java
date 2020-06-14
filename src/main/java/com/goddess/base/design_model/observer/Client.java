@@ -1,4 +1,5 @@
 package com.goddess.base.design_model.observer;
+
 /**
  * 观察者模式客户端
  *

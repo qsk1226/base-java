@@ -12,11 +12,11 @@ import java.util.Set;
  **/
 public class ConstantPoolOOMMock {
 
-    public static void main(String[] args) {
-        Set<String> stringSet = new HashSet<>();
-        int i = 0;
-        while (true) {
-            stringSet.add(String.valueOf(i++).intern());
-        }
-    }
+	public static void main(String[] args) {
+		Set<String> stringSet = new HashSet<>();
+		int i = 0;
+		while (true) {
+			stringSet.add(String.valueOf(i++).intern());
+		}
+	}
 }

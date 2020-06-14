@@ -2,7 +2,7 @@ package com.goddess.base.baseThread;
 
 /**
  * start和run的区别
- *
+ * <p>
  * 执行Thread的run()方法 是在main线程中执行
  * 执行Thread的start()方法是另外启动一个线程执行
  * run()   ------>   thread-main-----90

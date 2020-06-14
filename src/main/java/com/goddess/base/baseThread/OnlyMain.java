@@ -12,14 +12,14 @@ import java.lang.management.ThreadMXBean;
  **/
 public class OnlyMain {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        // Java虚拟机线程系统的管理接口
-        ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
-        ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
+		// Java虚拟机线程系统的管理接口
+		ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
+		ThreadInfo[] threadInfos = threadMXBean.dumpAllThreads(false, false);
 
-        for (ThreadInfo threadInfo : threadInfos) {
-            System.out.println(threadInfo.getThreadName() + "---" + threadInfo.getThreadId());
-        }
-    }
+		for (ThreadInfo threadInfo : threadInfos) {
+			System.out.println(threadInfo.getThreadName() + "---" + threadInfo.getThreadId());
+		}
+	}
 }

@@ -7,5 +7,5 @@ package com.goddess.base.design_model.observer;
  * @since 2020/6/12 17:28
  **/
 public interface Observer {
-    public void update(String message);
+	public void update(String message);
 }

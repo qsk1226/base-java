@@ -37,7 +37,7 @@ public class ProxyFactory {
 		proxy1.sayHello();
 		proxy1.saySb();
 		proxy1.sayNinHao();*/
- 
+
 
 		/*代理整个类*/
 		HelloService proxy2 = (HelloService) ProxyFactory.createProxy(HelloService.class, null, new HelloInterceptor());

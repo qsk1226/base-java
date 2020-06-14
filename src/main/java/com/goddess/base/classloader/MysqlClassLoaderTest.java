@@ -14,35 +14,35 @@ import java.util.ServiceLoader;
  */
 public class MysqlClassLoaderTest {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        ClassLoader parent = MysqlClassLoaderTest.class.getClassLoader().getParent();
+		ClassLoader parent = MysqlClassLoaderTest.class.getClassLoader().getParent();
 
-        System.out.println(parent); // 扩展类加载器
+		System.out.println(parent); // 扩展类加载器
 
-        // 重要
-        ServiceLoader<Driver> load = ServiceLoader.load(Driver.class);
-        Iterator<Driver> iterator = load.iterator();
+		// 重要
+		ServiceLoader<Driver> load = ServiceLoader.load(Driver.class);
+		Iterator<Driver> iterator = load.iterator();
 
-        while (iterator.hasNext()) {
-            Driver next = iterator.next();
-            System.out.println("Driver: " + next.getClass() + ", classLoader:" + next.getClass().getClassLoader());
-        }
-        System.out.println(Thread.currentThread().getContextClassLoader());
-        System.out.println(ServiceLoader.class.getClassLoader());
+		while (iterator.hasNext()) {
+			Driver next = iterator.next();
+			System.out.println("Driver: " + next.getClass() + ", classLoader:" + next.getClass().getClassLoader());
+		}
+		System.out.println(Thread.currentThread().getContextClassLoader());
+		System.out.println(ServiceLoader.class.getClassLoader());
 
-    }
+	}
 
-    /**
-     * 研究一下mysql驱动器的加载过程
-     *
-     * @throws Exception
-     */
-    private void connectSql() throws Exception {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("", "", "");
+	/**
+	 * 研究一下mysql驱动器的加载过程
+	 *
+	 * @throws Exception
+	 */
+	private void connectSql() throws Exception {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection connection = DriverManager.getConnection("", "", "");
 
 
-    }
+	}
 
 }

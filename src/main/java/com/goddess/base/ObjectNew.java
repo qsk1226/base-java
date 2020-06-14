@@ -39,7 +39,6 @@ public class ObjectNew {
 		// By using clone() method
 
 
-
 		Employee emp4 = (Employee) emp3.clone();
 		System.out.println("" + emp3.equals(emp4));
 		emp4.setName("Atul");

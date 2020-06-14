@@ -11,7 +11,7 @@ import com.goddess.base.design_model.factory.product.Memory;
  * @author qinshengke
  * @since 2020/6/8 15:28
  **/
-public class OfficeComputerFactory extends AbstractComputerFactory{
+public class OfficeComputerFactory extends AbstractComputerFactory {
 	@Override
 	public Cpu createCpu() {
 		return new IntelCpu();

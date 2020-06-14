@@ -10,7 +10,8 @@ import java.sql.SQLOutput;
  **/
 public class VolatileDemo {
 	private volatile static boolean ready;
-	private static  int number = 1;
+	private static int number = 1;
+
 	private static class PrintThread extends Thread {
 
 		public PrintThread(String name) {
@@ -21,7 +22,7 @@ public class VolatileDemo {
 		public void run() {
 
 			while (!ready) {
-				System.out.println("number: " + number ++);
+				System.out.println("number: " + number++);
 			}
 		}
 	}

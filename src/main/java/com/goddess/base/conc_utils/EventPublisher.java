@@ -11,12 +11,12 @@ import com.goddess.base.conc_utils.events.EventData;
 public interface EventPublisher {
 
 
-    default void publishEvent(EventData eventData) {
-        publishEvent(eventData);
-    }
+	default void publishEvent(EventData eventData) {
+		publishEvent(eventData);
+	}
 
-    /**
-     * 发布事件
-     **/
-    void publishEvent(Object event);
+	/**
+	 * 发布事件
+	 **/
+	void publishEvent(Object event);
 }

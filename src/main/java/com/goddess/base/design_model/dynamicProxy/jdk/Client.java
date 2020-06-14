@@ -10,12 +10,12 @@ import java.lang.reflect.Proxy;
  **/
 public class Client {
 
-    public static void main(String[] args) {
-        UserService userService = new UserServiceImpl();
-        UserService userServiceProxy = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(),
-                userService.getClass().getInterfaces(), new UserServiceInvocation(userService));
-        userServiceProxy.addUser(new UserBean());
-        System.out.println("end");
+	public static void main(String[] args) {
+		UserService userService = new UserServiceImpl();
+		UserService userServiceProxy = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(),
+				userService.getClass().getInterfaces(), new UserServiceInvocation(userService));
+		userServiceProxy.addUser(new UserBean());
+		System.out.println("end");
 
-    }
+	}
 }

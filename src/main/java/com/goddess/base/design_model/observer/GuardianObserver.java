@@ -18,6 +18,4 @@ public class GuardianObserver implements Observer {
 	public void update(String message) {
 		System.out.println(name + "-" + message);
 	}
-
-
 }

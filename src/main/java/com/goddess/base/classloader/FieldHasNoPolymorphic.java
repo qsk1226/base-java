@@ -1,7 +1,7 @@
 package com.goddess.base.classloader;
 
 /**
- * TODO
+ * java 分派机制演示
  *
  * @author qinshengke
  * @since 2020/4/6 13:40

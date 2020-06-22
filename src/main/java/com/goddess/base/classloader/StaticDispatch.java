@@ -1,7 +1,7 @@
 package com.goddess.base.classloader;
 
 /**
- * 虚拟机字节码执行引擎派发
+ * 方法静态分派演示
  *
  * @author qinshengke
  * @since 2020/4/6 12:22

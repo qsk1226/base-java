@@ -3,7 +3,7 @@ package com.goddess.base.classloader;
 import java.io.Serializable;
 
 /**
- * 重载更适合版本判断
+ * 重载方法更适合版本判断
  *
  * @author qinshengke
  * @since 2020/4/6 12:53
@@ -38,7 +38,7 @@ public class OverLoad {
 	}
 
 	public static void main(String[] args) {
-		sayHello('a');
+		sayHello('1');
 	}
 
 }

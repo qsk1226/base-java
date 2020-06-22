@@ -6,7 +6,7 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 /**
- * TODO
+ * 数据库连接
  *
  * @author qinshengke
  * @since 2020/4/12 21:23

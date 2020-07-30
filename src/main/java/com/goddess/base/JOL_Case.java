@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
  * @since 2020/4/15 22:10
  **/
 public class JOL_Case {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Object a = new Object();
 		System.out.println(ClassLayout.parseInstance(a).toPrintable());
 
@@ -24,5 +24,7 @@ public class JOL_Case {
 
 		//获取对象总大小
 		System.out.println("size : " + GraphLayout.parseInstance(a).totalSize());
+
+		Thread.sleep(1000000);
 	}
 }

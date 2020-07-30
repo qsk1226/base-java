@@ -1,7 +1,7 @@
 package com.goddess.base.baseThread;
 
 /**
- * 守护线程：
+ * 守护线程
  *
  * @author qinshengke
  * @since 2020/5/30 14:14

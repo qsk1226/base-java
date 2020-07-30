@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * jdk1.6之前 -XX:PermSize=6M -XX:MaxPermSize=6M
- * jdk1.6之后 -Xmx6M
+ * jdk1.8之前 -XX:PermSize=6M -XX:MaxPermSize=6M
+ * jdk1.8之后 -Xmx6M
  *
  * @author qinshengke
  * @since 2020/4/12 00:06

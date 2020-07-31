@@ -17,6 +17,6 @@ public class JVMObject {
 		System.out.println(str1 == str2);// false
 		System.out.println(str2 == str3);//false
 		System.out.println(str1 == str3);//true
-
+		System.gc();
 	}
 }

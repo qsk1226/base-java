@@ -7,6 +7,7 @@ import java.util.List;
  * OOM 异常 -Xms5m -xmx5m -XX:+HeapDumpOnOutOfMemoryError
  */
 public class HeapOomMock {
+
 	public static void main(String[] args) {
 		List<byte[]> list = new ArrayList<byte[]>();
 		int i = 0;

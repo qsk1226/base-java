@@ -1,12 +1,21 @@
 package com.goddess.base;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
-class Employee implements Cloneable, Serializable {
+@Data
+public class Employee implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
-	private String name;
+	private String id;// 雇员的标识号码
+	private String name;// 雇员姓名
+	private String department;// 该雇员所在部门
+	private String Phone;// 该雇员联系电话
+	private int salary;// 该雇员薪资
+	private String origin;// 该雇员信息的来源
 
-	public Employee() {
+	public Employee(String id) {
+		this.id = id;
 		System.out.println("Employee Constructor Called...");
 	}
 

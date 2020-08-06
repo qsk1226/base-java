@@ -1,10 +1,12 @@
 package com.goddess.base;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
+@NoArgsConstructor
 public class Employee implements Cloneable, Serializable {
 	private static final long serialVersionUID = 1L;
 	private String id;// 雇员的标识号码

@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @since 2020/4/6 12:53
  **/
 public class OverLoad {
+	
 	public static void sayHello(Object args) {
 		System.out.println("hello object");
 	}
@@ -42,5 +43,5 @@ public class OverLoad {
 	}
 
 }
-
+ 
 // hello char--> hello int --> hello long -->  hello Character --> hello Serializable --> hello object

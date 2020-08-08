@@ -8,7 +8,7 @@ package com.goddess.base.classloader;
  **/
 public class StaticDispatch {
 
-	abstract static class Human {
+	static abstract class Human {
 	}
 
 	static class Man extends Human {
@@ -25,7 +25,7 @@ public class StaticDispatch {
 		System.out.println("Hello man");
 	}
 
-	public void sayHello(Woman man) {
+	public void sayHello(Woman woman) {
 		System.out.println("Hello woman");
 	}
 

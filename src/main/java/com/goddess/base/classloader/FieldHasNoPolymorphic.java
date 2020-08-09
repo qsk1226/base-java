@@ -36,7 +36,6 @@ public class FieldHasNoPolymorphic {
 
 	public static void main(String[] args) {
 		BigBrother brother = new LittleBrother();
-
 		System.out.println("brother had ￥" + brother.money);
 	}
 }

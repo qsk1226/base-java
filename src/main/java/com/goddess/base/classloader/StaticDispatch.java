@@ -30,6 +30,7 @@ public class StaticDispatch {
 	}
 
 	public static void main(String[] args) {
+		// 这里Human 被称为静态类型，Man被称为实际类型
 		Human man = new Man();
 		Human woman = new Woman();
 

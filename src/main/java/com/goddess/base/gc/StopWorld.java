@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * full gc示例
  * VM参数： -XX:+PrintGC -Xms30M -Xmx30M -Xmn10m -XX:SurvivorRatio=8 -XX:-UseCompressedOops
  */
 public class StopWorld {
@@ -25,8 +26,8 @@ public class StopWorld {
 					}
 					Thread.sleep(1);
 				}
-
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}

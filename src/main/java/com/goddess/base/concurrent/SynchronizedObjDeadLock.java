@@ -40,6 +40,7 @@ public class SynchronizedObjDeadLock {
 				synchronized (objectA) {
 					System.out.println("A");
 				}
+				// G1HeapRegionSize
 			}
 		}).start();
 

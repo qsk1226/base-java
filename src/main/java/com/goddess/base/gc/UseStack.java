@@ -14,7 +14,7 @@ public class UseStack {
 
 		//10万的数据入栈
 		for (int i = 0; i < 100000; i++) {
-			stack.push(new String[1 * 1000]); //入栈
+			stack.push(new String[2 * 1000]); //入栈
 		}
 		for (int i = 0; i < 100000; i++) {//10万的数据出栈
 			Object o1 = stack.pop(); //出栈

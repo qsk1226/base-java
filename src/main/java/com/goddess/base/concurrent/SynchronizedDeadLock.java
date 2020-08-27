@@ -1,7 +1,7 @@
 package com.goddess.base.concurrent;
 
 /**
- * TODO
+ * Synchronized 死锁
  *
  * @author qinshengke
  * @since 2020/7/13 21:51

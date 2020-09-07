@@ -1,11 +1,11 @@
-package com.goddess.base;
+package com.goddess.base.concurrent.util;
 
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 
 /**
- * TODO
+ * 获取unsafe类
  *
  * @author qinshengke
  * @since 2020/8/27 20:30

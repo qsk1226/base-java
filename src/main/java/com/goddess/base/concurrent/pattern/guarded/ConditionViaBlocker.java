@@ -47,7 +47,6 @@ public class ConditionViaBlocker implements Blocker {
 	@Override
 	public void signalAfter(Callable<Boolean> stateOperation) throws Exception {
 		lock.lockInterruptibly();
-
 		try {
 			if (stateOperation.call()) {
 				condition.signal();

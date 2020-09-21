@@ -40,7 +40,6 @@ public class GuardedManager {
 		heartbeatTimer.schedule(new HeartbeatTask(alarmAgent), 60000, 2000);
 	}
 
-
 	public void sendAlarmInfo(AlarmInfo alarmInfo) throws Exception {
 		GuardedAction<Void> concreteGuardedAction = getGuardedAction();
 		alarmAgent.sendAlarm(concreteGuardedAction,alarmInfo);

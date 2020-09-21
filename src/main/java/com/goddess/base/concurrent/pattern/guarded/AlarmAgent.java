@@ -3,9 +3,7 @@ package com.goddess.base.concurrent.pattern.guarded;
 import com.goddess.base.concurrent.pattern.guarded.task.ConnectingTask;
 import com.goddess.base.concurrent.pattern.guarded.task.HeartbeatTask;
 import lombok.extern.slf4j.Slf4j;
-import sun.security.ssl.Debug;
 
-import javax.sound.sampled.Line;
 import java.util.Timer;
 import java.util.concurrent.Callable;
 
@@ -17,8 +15,6 @@ import java.util.concurrent.Callable;
  **/
 @Slf4j(topic = "guarded-pattern")
 public class AlarmAgent {
-
-
 
 	/**
 	 * predicate 参与者实例

@@ -17,6 +17,7 @@ public class BiasedLockSynchronized {
 
 	public static void main(String[] args) throws InterruptedException {
 		Object object = new Object();
+		System.out.println(" original -- " + ClassLayout.parseInstance(object).toPrintable());
 		// main线程 很大概率会限制性 开启偏向锁的时候
 		synchronized (object) {
 			System.out.println(" 1- main sync locked -- " + ClassLayout.parseInstance(object).toPrintable());

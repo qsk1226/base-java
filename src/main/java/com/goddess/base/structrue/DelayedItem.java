@@ -1,4 +1,4 @@
-package com.goddess.base.collection;
+package com.goddess.base.structrue;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;

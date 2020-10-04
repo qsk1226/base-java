@@ -1,7 +1,5 @@
 package com.goddess.base.baseThread;
 
-import java.sql.SQLOutput;
-
 /**
  * volatile使用
  *
@@ -13,14 +11,11 @@ public class VolatileDemo {
 	private static int number = 1;
 
 	private static class PrintThread extends Thread {
-
 		public PrintThread(String name) {
 			super(name);
 		}
-
 		@Override
 		public void run() {
-
 			while (!ready) {
 				System.out.println("number: " + number++);
 			}

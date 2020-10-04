@@ -1,4 +1,4 @@
-package com.goddess.base.concurrent;
+package com.goddess.base.concurrent.lock;
 
 /**
  * Synchronized 死锁

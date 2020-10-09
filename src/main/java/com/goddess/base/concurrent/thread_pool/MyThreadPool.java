@@ -1,4 +1,4 @@
-package com.goddess.base.thread_pool;
+package com.goddess.base.concurrent.thread_pool;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

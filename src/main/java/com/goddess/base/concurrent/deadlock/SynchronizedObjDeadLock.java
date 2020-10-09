@@ -1,4 +1,4 @@
-package com.goddess.base.concurrent.lock;
+package com.goddess.base.concurrent.deadlock;
 
 /**
  * 死锁
@@ -40,7 +40,6 @@ public class SynchronizedObjDeadLock {
 				synchronized (objectA) {
 					System.out.println("A");
 				}
-				// G1HeapRegionSize
 			}
 		}).start();
 

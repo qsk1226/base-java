@@ -31,7 +31,7 @@ public class ConditionViaBlocker implements Blocker {
 	public <T> T callWithGuard(GuardedAction<T> guardedAction, AlarmInfo message) throws Exception {
 		lock.lockInterruptibly();
 
-		T result ;
+		T result;
 		try {
 			final Predicate guard = guardedAction.predicate;
 			while (!guard.evaluate()) {
@@ -58,10 +58,10 @@ public class ConditionViaBlocker implements Blocker {
 	}
 
 	@Override
-	public void signal() throws Exception{
+	public void signal() throws Exception {
 		lock.lockInterruptibly();
 		try {
-				condition.signal();
+			condition.signal();
 		} finally {
 			lock.unlock();
 		}

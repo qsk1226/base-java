@@ -22,6 +22,4 @@ public class UseStack {
 		Thread.sleep(Integer.MAX_VALUE);
 
 	}
-
-
 }

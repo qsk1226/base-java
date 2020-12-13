@@ -5,6 +5,7 @@ import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
+import java.security.PrivilegedAction;
 
 /**
  * 直接内存OOM示例

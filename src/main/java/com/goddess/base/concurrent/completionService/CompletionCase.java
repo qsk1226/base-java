@@ -4,8 +4,11 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 类说明：
- */
+ *  CompletionService的使用
+ *
+ * @author qinshengke
+ * @since 2021/1/1
+ **/
 public class CompletionCase {
 	private final int POOL_SIZE = Runtime.getRuntime().availableProcessors();
 	private final int TOTAL_TASK = Runtime.getRuntime().availableProcessors() * 10;

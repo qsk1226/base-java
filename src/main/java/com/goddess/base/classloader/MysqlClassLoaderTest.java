@@ -28,6 +28,7 @@ public class MysqlClassLoaderTest {
 			Driver next = iterator.next();
 			System.out.println("Driver: " + next.getClass() + ", classLoader:" + next.getClass().getClassLoader());
 		}
+
 		System.out.println(Thread.currentThread().getContextClassLoader());
 		System.out.println(ServiceLoader.class.getClassLoader());
 

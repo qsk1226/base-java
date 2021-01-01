@@ -4,7 +4,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 类说明：演示ScheduledThreadPoolExecutor的用法
+ * ScheduledThreadPoolExecutor的用法
  */
 public class ScheduledCase {
 	public static void main(String[] args) {

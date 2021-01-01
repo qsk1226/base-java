@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
 /**
- *类说明：演示Semaphore用法，一个数据库连接池的实现
+ * Semaphore用法，一个数据库连接池的实现
  */
 public class DBPoolSemaphore {
 	

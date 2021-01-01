@@ -5,8 +5,11 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- *类说明：
- */
+ * Condition的使用
+ *
+ * @author qinshengke
+ * @since 2021/1/1
+ **/
 public class ExpressCond {
     public final static String CITY = "Beijing";
     private int km;/*快递运输里程数*/

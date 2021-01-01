@@ -4,8 +4,11 @@ import java.util.Random;
 import java.util.concurrent.Callable;
 
 /**
- *类说明：
- */
+ * 任务
+ *
+ * @author qinshengke
+ * @since 2021/1/1
+ **/
 public class WorkTask implements Callable<Integer> {
     private String name;
     public WorkTask(String name) {

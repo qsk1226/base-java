@@ -1,7 +1,7 @@
 package com.goddess.base.concurrent.condition;
 
 /**
- * 类说明：测试Lock和Condition实现等待通知
+ * 测试Lock和Condition实现等待通知
  */
 public class TestCond {
 	private static ExpressCond express = new ExpressCond(0, ExpressCond.CITY);

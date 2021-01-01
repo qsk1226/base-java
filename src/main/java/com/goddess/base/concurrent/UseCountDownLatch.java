@@ -5,7 +5,7 @@ import com.goddess.base.concurrent.util.SleepTools;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 弟兄线程都到收拾利索之前，都得等着，如果都收拾好了，开始下一步行动
+ * 所有兄线程都完成之前，都得等着，如果都收拾好了，开始下一步行动
  *
  * @author qinshengke
  * @since 2020/10/3 12:32

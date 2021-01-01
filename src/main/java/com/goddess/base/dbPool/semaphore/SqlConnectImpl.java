@@ -1,4 +1,4 @@
-package com.goddess.base.concurrent.semaphore;
+package com.goddess.base.dbPool.semaphore;
 
 import java.sql.*;
 import java.util.Map;

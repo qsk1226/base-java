@@ -1,7 +1,8 @@
 package com.goddess.base.exeSystem;
 
 /**
- * -XX:+TraceClassLoading, 用于追踪类的加载信息并打印出来
+ * 初始化顺序
+ * 用于追踪类的加载信息并打印出来，-XX:+TraceClassLoading
  *
  * @author qinshengke
  * @since 2020/8/5 17:28

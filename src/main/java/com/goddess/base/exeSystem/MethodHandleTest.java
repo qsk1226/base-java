@@ -6,7 +6,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 
 /**
- * MethodHandle基础用法演示
+ * MethodHandle 基础用法演示
  */
 public class MethodHandleTest {
 	static class ClassA {

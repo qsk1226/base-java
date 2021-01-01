@@ -3,7 +3,7 @@ package com.goddess.base.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
- * TODO
+ * 带版本戳的原子操作类
  *
  * @author qinshengke
  * @since 2020/12/20
@@ -20,7 +20,8 @@ public class AtomicStampedReferenceTest {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			boolean isCASSuccess = atomicStampedRef.compareAndSet(1, 2, stamp, stamp + 1);  //此时expectedReference未发生改变，但是stamp已经被修改了,所以CAS失败
+			//此时expectedReference未发生改变，但是stamp已经被修改了,所以CAS失败
+			boolean isCASSuccess = atomicStampedRef.compareAndSet(1, 2, stamp, stamp + 1);
 			System.out.println("操作线程" + Thread.currentThread() + ",CAS操作结果: " + isCASSuccess);
 		}, "主操作线程");
 

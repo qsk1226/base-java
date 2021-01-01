@@ -1,4 +1,4 @@
-package com.goddess.base.concurrent.semaphore;
+package com.goddess.base.dbPool.semaphore;
 
 
 import com.goddess.base.concurrent.util.SleepTools;

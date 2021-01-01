@@ -1,5 +1,6 @@
-package com.goddess.base.structrue;
+package com.goddess.base.blocking;
 
+import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
@@ -51,6 +52,17 @@ public class DelayedItem<T> implements Delayed {
 			} else {
 				return 1;
 			}
+		}
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		DelayQueue<DelayedItem> queue = new DelayQueue<>();
+
+		queue.offer(new DelayedItem<>(10, 20));
+		queue.offer(new DelayedItem<>(10, 30));
+		while (!queue.isEmpty()) {
+			System.out.println("111");
+			System.out.println(queue.take());
 		}
 	}
 }

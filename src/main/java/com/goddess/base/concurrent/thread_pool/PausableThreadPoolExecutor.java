@@ -5,6 +5,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * 带暂停功能的线程池
+ *
  * @author qinshengke
  * @since 2020/6/10 14:47
  **/
@@ -65,6 +67,10 @@ public class PausableThreadPoolExecutor extends ThreadPoolExecutor {
 		} finally {
 			pauseLock.unlock();
 		}
+	}
+
+	public static void main(String[] args) {
+
 	}
 
 }

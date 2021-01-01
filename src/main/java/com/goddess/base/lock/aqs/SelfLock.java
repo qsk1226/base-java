@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 /**
- * 独占锁
+ * 可重入的独占锁
  *
  * @author qinshengke
  * @since 2020/4/19 11:10
@@ -28,13 +28,13 @@ public class SelfLock implements Lock {
 		@Override
 		protected boolean tryAcquire(int arg) {
 			// 第一次获取同步状态
-			if (compareAndSetState(0, arg)) {
+			if (compareAndSetState(0, 1)) {
 				// 设置持有独占锁的线程
 				setExclusiveOwnerThread(Thread.currentThread());
 				return true;
 			}
 			if (Thread.currentThread() == getExclusiveOwnerThread()) {
-				int lockCount = getState() + arg;
+				int lockCount = getState() + 1;
 				setState(lockCount);
 				return true;
 			}
@@ -48,7 +48,7 @@ public class SelfLock implements Lock {
 				throw new IllegalMonitorStateException("不是占有同步状态的线程，不允许操作");
 			}
 			boolean free = false;
-			int nextCount = currentState - arg;
+			int nextCount = currentState - 1;
 			if (nextCount == 0) {
 				free = true;
 				setExclusiveOwnerThread(null);

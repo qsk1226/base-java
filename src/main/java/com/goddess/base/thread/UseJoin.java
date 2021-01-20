@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread;
+package com.goddess.base.thread;
 
 
 import com.goddess.base.concurrent.util.SleepTools;

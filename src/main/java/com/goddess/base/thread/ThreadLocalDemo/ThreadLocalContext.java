@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread.ThreadLocalDemo;
+package com.goddess.base.thread.ThreadLocalDemo;
 
 /**
  * ThreadLocal工具

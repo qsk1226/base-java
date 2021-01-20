@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread.ThreadLocalDemo;
+package com.goddess.base.thread.ThreadLocalDemo;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread;
+package com.goddess.base.thread;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

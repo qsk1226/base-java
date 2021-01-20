@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread;
+package com.goddess.base.thread;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;

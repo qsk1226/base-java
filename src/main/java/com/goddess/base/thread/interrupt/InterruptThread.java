@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread.interrupt;
+package com.goddess.base.thread.interrupt;
 
 /**
  * 中断Thread 实现类

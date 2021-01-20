@@ -1,4 +1,4 @@
-package com.goddess.base.baseThread;
+package com.goddess.base.thread;
 
 import lombok.extern.slf4j.Slf4j;
 

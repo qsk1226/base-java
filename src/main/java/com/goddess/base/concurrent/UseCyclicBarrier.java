@@ -6,8 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 
 public class UseCyclicBarrier {
 
-	private static CyclicBarrier barrier
-			= new CyclicBarrier(4, new CollectThread());
+	private static CyclicBarrier barrier = new CyclicBarrier(4, new CollectThread());
 
 	//存放子线程工作结果的容器
 	private static ConcurrentHashMap<String, Long> resultMap
@@ -49,6 +48,7 @@ public class UseCyclicBarrier {
 				// 这里CyclicBarrier 计数器再次使用
 				Thread.sleep(1000 + id);
 				System.out.println("Thread_" + id + " ....do its business ");
+				System.out.println(barrier.getNumberWaiting());
 				barrier.await();
 			} catch (Exception e) {
 				e.printStackTrace();

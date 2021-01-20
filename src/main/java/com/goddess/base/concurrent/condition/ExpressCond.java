@@ -14,11 +14,11 @@ public class ExpressCond {
     public final static String CITY = "Beijing";
     private int km;/*快递运输里程数*/
     private String site;/*快递到达地点*/
-    private Lock kmLock = new ReentrantLock();
-    private Lock siteLock = new ReentrantLock();
+    private final Lock kmLock = new ReentrantLock();
+    private final Lock siteLock = new ReentrantLock();
 
-    private Condition kmCond = kmLock.newCondition();
-    private Condition siteCond = siteLock.newCondition();
+    private final Condition kmCond = kmLock.newCondition();
+    private final Condition siteCond = siteLock.newCondition();
 
     public ExpressCond() {
     }

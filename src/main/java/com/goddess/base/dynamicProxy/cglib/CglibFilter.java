@@ -1,4 +1,4 @@
-package com.goddess.base.design_model.dynamicProxy.cglib;
+package com.goddess.base.dynamicProxy.cglib;
 
 import net.sf.cglib.proxy.CallbackFilter;
 

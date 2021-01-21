@@ -1,4 +1,4 @@
-package com.goddess.base.design_model.dynamicProxy.jdk;
+package com.goddess.base.dynamicProxy.jdk;
 
 import lombok.extern.slf4j.Slf4j;
 

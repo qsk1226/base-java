@@ -1,4 +1,4 @@
-package com.goddess.base.design_model.dynamicProxy.jdk;
+package com.goddess.base.dynamicProxy.jdk;
 
 /**
  * 用户服务实现

@@ -1,4 +1,4 @@
-package com.goddess.base.design_model.dynamicProxy.cglib;
+package com.goddess.base.dynamicProxy.cglib;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
  * @since 2020/6/3 22:03
  **/
 public abstract class AbstractAdviceInterceptor implements MethodInterceptor {
+
 	abstract void preExecute(MethodProxy proxy, Object object, Method method, Object[] args);
 
 	abstract void afterExecute(MethodProxy proxy, Object object, Method method, Object[] args);

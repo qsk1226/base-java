@@ -1,4 +1,4 @@
-package com.goddess.base.design_model.dynamicProxy.cglib;
+package com.goddess.base.dynamicProxy.cglib;
 
 import net.sf.cglib.proxy.CallbackFilter;
 import net.sf.cglib.proxy.Enhancer;
@@ -24,7 +24,7 @@ public class ProxyFactory {
 		enhancer.setSuperclass(targetClass);
 		enhancer.setUseCache(false);
 		// 拦截器
-		//enhancer.setCallbackFilter(callbackFilter);
+		enhancer.setCallbackFilter(callbackFilter);
 		enhancer.setCallbacks(methodInterceptor);
 		return enhancer.create();
 
@@ -33,17 +33,17 @@ public class ProxyFactory {
 	public static void main(String[] args) {
 		/* 代理方法一个类中的方法*/
 
-		/*HelloService proxy1 = (HelloService) ProxyFactory.createProxy(HelloService.class, new CglibFilter(), new HelloInterceptor(), new SbInterceptor());
+		HelloService proxy1 = (HelloService) ProxyFactory.createProxy(HelloService.class, new CglibFilter(), new HelloInterceptor(), new SbInterceptor());
 		proxy1.sayHello();
 		proxy1.saySb();
-		proxy1.sayNinHao();*/
+		proxy1.sayNinHao();
 
 
 		/*代理整个类*/
-		HelloService proxy2 = (HelloService) ProxyFactory.createProxy(HelloService.class, null, new HelloInterceptor());
+		/*HelloService proxy2 = (HelloService) ProxyFactory.createProxy(HelloService.class, null, new HelloInterceptor());
 		proxy2.sayHello();
 		proxy2.saySb();
-		proxy2.sayNinHao();
+		proxy2.sayNinHao();*/
 
 	}
 }

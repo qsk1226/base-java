@@ -23,9 +23,11 @@ public class ProxyFactory {
 		Enhancer enhancer = new Enhancer();
 		enhancer.setSuperclass(targetClass);
 		enhancer.setUseCache(false);
+
 		// 拦截器
 		enhancer.setCallbackFilter(callbackFilter);
 		enhancer.setCallbacks(methodInterceptor);
+
 		return enhancer.create();
 
 	}
@@ -38,12 +40,16 @@ public class ProxyFactory {
 		proxy1.saySb();
 		proxy1.sayNinHao();
 
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
 
 		/*代理整个类*/
-		/*HelloService proxy2 = (HelloService) ProxyFactory.createProxy(HelloService.class, null, new HelloInterceptor());
+		HelloService proxy2 = (HelloService) ProxyFactory.createProxy(HelloService.class, null, new HelloInterceptor());
 		proxy2.sayHello();
 		proxy2.saySb();
-		proxy2.sayNinHao();*/
+		proxy2.sayNinHao();
 
 	}
 }

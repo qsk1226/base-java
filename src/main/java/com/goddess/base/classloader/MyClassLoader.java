@@ -81,10 +81,6 @@ public class MyClassLoader extends ClassLoader {
 
 	/**
 	 * 如果 重写这个方法之后可能破坏jvm的委派机制
-	 *
-	 * @param name
-	 * @return
-	 * @throws ClassNotFoundException
 	 */
 	@Override
 	public Class<?> loadClass(String name) throws ClassNotFoundException {

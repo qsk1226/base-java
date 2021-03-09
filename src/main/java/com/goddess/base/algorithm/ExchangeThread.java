@@ -1,7 +1,9 @@
-package com.goddess.base.concurrent;
+package com.goddess.base.algorithm;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -11,10 +13,10 @@ import java.util.concurrent.locks.ReentrantLock;
  * @since 2021/3/9
  **/
 public class ExchangeThread {
+	static int count = 1;
 
 	static Lock lock = new ReentrantLock();
 	static Condition condition = lock.newCondition();
-	static int count = 1;
 
 	/**
 	 * 一个 Condition 的交替执行
@@ -38,6 +40,7 @@ public class ExchangeThread {
 		}
 	}
 
+	/**==================================================*/
 	static final Object objLock = new Object();
 
 	/**
@@ -61,7 +64,48 @@ public class ExchangeThread {
 			}
 		}
 	}
+	/**==================================================*/
+	static final ReentrantLock twoConditionLock = new ReentrantLock();
+	static Condition condition1 = twoConditionLock.newCondition();
+	static Condition condition2 = twoConditionLock.newCondition();
 
+	static class RunTwoCondition1 implements Runnable {
+		@Override
+		public void run() {
+			twoConditionLock.lock();
+			try {
+				while (count <= 100) {
+					System.out.println(Thread.currentThread().getName() + "---" + count++);
+					condition1.await();
+					condition2.signalAll();
+				}
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				twoConditionLock.unlock();
+			}
+		}
+	}
+
+	static class RunTwoCondition2 implements Runnable {
+		@Override
+		public void run() {
+			twoConditionLock.lock();
+			try {
+				while (count <= 100) {
+					System.out.println(Thread.currentThread().getName() + "---" + count++);
+					condition1.signalAll();
+					condition2.await();
+				}
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				twoConditionLock.unlock();
+			}
+		}
+	}
+
+	/**==================================================*/
 
 	public static void main(String[] args) throws InterruptedException {
 		/*
@@ -71,7 +115,8 @@ public class ExchangeThread {
 		new Thread(new RunWaitNotify(), "jack").start();
 		new Thread(new RunWaitNotify(), "lyly").start();
 		*/
-
+		new Thread(new RunTwoCondition1(), "jack").start();
+		new Thread(new RunTwoCondition2(), "lyly").start();
 
 
 	}

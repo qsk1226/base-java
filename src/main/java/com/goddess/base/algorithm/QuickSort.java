@@ -1,7 +1,7 @@
 package com.goddess.base.algorithm;
 
 /**
- * .
+ * 快速排序
  *
  * @author qinshengke
  * @since 2021/3/3

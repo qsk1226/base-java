@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+/**
+ * 基于信号量的阻塞队列
+ *
+ * @author qinshengke
+ * @since 2021/3/9
+ **/
 public class SemaphoreBlockingQueue<E> implements CustomBlockingQueue<E> {
 	private final List<E> valueList;
 	private final Semaphore putActionNum;//可以进行put操作的许可数量

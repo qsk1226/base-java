@@ -1,7 +1,7 @@
 package com.goddess.base.blocking;
 
 /**
- * TODO
+ * 阻塞队列接口
  *
  * @author qinshengke
  * @since 2021/2/23

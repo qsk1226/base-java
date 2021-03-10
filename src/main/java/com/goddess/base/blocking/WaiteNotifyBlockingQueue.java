@@ -5,7 +5,7 @@ import java.util.List;
 
 public class WaiteNotifyBlockingQueue<E> implements CustomBlockingQueue<E> {
 
-	private List<E> queue = new LinkedList<>();
+	private final List<E> queue = new LinkedList<>();
 	private int limit = 10;
 
 	public WaiteNotifyBlockingQueue(int limit) {
@@ -14,32 +14,30 @@ public class WaiteNotifyBlockingQueue<E> implements CustomBlockingQueue<E> {
 
 
 	public synchronized void put(E item) {
-		while (this.queue.size() >= this.limit) {
-			try {
+		try {
+			while (this.queue.size() >= this.limit)
 				wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+
 		if (this.queue.size() == 0) {
 			notifyAll();
 		}
 		this.queue.add(item);
 	}
 
-
 	public synchronized E take() {
-		while (this.queue.size() == 0) {
-			try {
+		try {
+			while (this.queue.size() == 0)
 				wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+
 		if (this.queue.size() == this.limit) {
 			notifyAll();
 		}
-
 		return this.queue.remove(0);
 	}
 

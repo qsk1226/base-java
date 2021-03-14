@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm;
+package com.goddess.base.algorithm.sort;
 /**
  * 压缩字符串
  *

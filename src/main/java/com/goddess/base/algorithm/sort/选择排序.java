@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm;
+package com.goddess.base.algorithm.sort;
 
 import java.util.Arrays;
 
@@ -42,4 +42,5 @@ public class 选择排序 {
 		选择排序 选择排序 = new 选择排序();
 		选择排序.selectSort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
 	}
+
 }

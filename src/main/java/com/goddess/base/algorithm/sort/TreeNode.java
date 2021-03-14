@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm;
+package com.goddess.base.algorithm.sort;
 
 public class TreeNode {
 		private Integer value;

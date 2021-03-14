@@ -1,14 +1,12 @@
 package com.goddess.base.algorithm;
 
-import javax.swing.*;
-
 /**
  * 链表是环？快慢指针
  *
  * @author qinshengke
  * @since 2021/3/9
  **/
-public class Solution {
+public class LinkCycleOrNot {
 	public boolean hasCycle(ListNode head) {
 		if (head == null || head.next == null) {
 			return true;

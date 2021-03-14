@@ -36,15 +36,15 @@ public class 最大子矩阵的大小 {
 			while (!stack.isEmpty() && height[i] <= height[stack.peek()]) {
 				int j = stack.pop();
 				int k = stack.isEmpty() ? -1 : stack.peek();
-				int curArea = (i-k-1) * height[j];
+				int curArea = (i - k - 1) * height[j];
 				maxArea = Math.max(maxArea, curArea);
 			}
 			stack.push(i);
 		}
 		while (!stack.isEmpty()) {
 			int j = stack.pop();
-			int k = stack.empty()?-1: stack.peek();
-			int curArea = (height.length -k -1) * height[j];
+			int k = stack.empty() ? -1 : stack.peek();
+			int curArea = (height.length - k - 1) * height[j];
 			maxArea = Math.max(maxArea, curArea);
 		}
 		return maxArea;

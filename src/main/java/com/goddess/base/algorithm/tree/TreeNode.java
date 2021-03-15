@@ -1,5 +1,10 @@
-package com.goddess.base.algorithm.sort;
-
+package com.goddess.base.algorithm.tree;
+/**
+ * 属性节点
+ *
+ * @author qinshengke
+ * @since 2021/3/15
+ **/
 public class TreeNode {
 		private Integer value;
 		private TreeNode left;

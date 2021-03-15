@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm.sort;
+package com.goddess.base.algorithm.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

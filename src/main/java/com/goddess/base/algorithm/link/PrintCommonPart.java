@@ -34,4 +34,15 @@ public class PrintCommonPart {
 		}
 	}
 
+	public static void main(String[] args) {
+		MyNode myNode = new MyNode(1);
+		myNode.next = new MyNode(2);
+		myNode.next.next = new MyNode(3);
+
+		MyNode myNode1 = new MyNode(1);
+
+		PrintCommonPart printCommonPart = new PrintCommonPart();
+		printCommonPart.printCommonPart(myNode,myNode1);
+	}
+
 }

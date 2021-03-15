@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm;
+package com.goddess.base.algorithm.link;
 
 /**
  * 链表是环？快慢指针

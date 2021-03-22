@@ -16,6 +16,7 @@ public class QuickSort {
 		System.out.println(Arrays.toString(xx));
 	}
 
+
 	public static int[] xx(int[] array,int low,int high) {
 
 		if (low < high) {

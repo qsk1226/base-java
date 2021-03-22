@@ -40,7 +40,29 @@ public class 选择排序 {
 
 	public static void main(String[] args) {
 		选择排序 选择排序 = new 选择排序();
-		选择排序.selectSort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
+		选择排序.sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
+	}
+
+	public int[] sort(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			int minIndex = i;
+			int minValue = array[i];
+			for (int j = i + 1; j < array.length; j++) {
+				if (array[j] < minValue) {
+					minValue = array[j];
+					minIndex = j;
+				}
+			}
+
+			if (minIndex != i) {
+				int tmp = array[i];
+				array[i] = array[minIndex];
+				array[minIndex] = tmp;
+			}
+		}
+
+		System.out.println(Arrays.toString(array));
+		return array;
 	}
 
 }

@@ -28,9 +28,27 @@ public class 折半查找 {
 		return -1;
 	}
 
-
-
 	public static void main(String[] args) {
-
+		int[] array = {1, 3, 5, 7, 9, 10, 13, 17};
+		System.out.println(bSearch(array, 17));
 	}
+
+
+	public static int bSearch(int[] array, int value) {
+		int low = 0;
+		int high = array.length;
+		int mid = 0;
+		while (low <= high) {
+			mid = (low + high) / 2;
+			if (array[mid] == value) {
+				return mid;
+			} else if (array[mid] < value) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+		return -1;
+	}
+
 }

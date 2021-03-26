@@ -9,7 +9,7 @@ public class LoopQueue {
 
 	Object queueList[];
 
-//初始化队列
+	//初始化队列
 
 	public LoopQueue() {
 		maxSize = 1024;

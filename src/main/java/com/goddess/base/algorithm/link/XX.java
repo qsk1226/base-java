@@ -3,7 +3,7 @@ package com.goddess.base.algorithm.link;
 import java.util.Stack;
 
 /**
- * .
+ * 两个链表相加 后的链表
  *
  * @author qinshengke
  * @since 2021/3/15

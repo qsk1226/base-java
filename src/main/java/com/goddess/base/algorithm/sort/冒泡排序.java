@@ -38,23 +38,33 @@ public class 冒泡排序 {
 		System.out.println(Arrays.toString(a));
 	}
 
-	public static void main(String[] args) {
-		sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
-	}
-
 
 	public static int[] sort(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 1; j < array.length - i; j++) {
-				if (array[j-1] > array[j]) {
-					int tmp = array[j-1];
-					array[j-1] = array[j];
-					array[j] = tmp;
-				}
+
 			}
 		}
 		System.out.println(Arrays.toString(array));
 		return array;
+	}
+
+
+
+	public static int highestOneBit(int i) {
+		// HD, Figure 3-1
+		i |= (i >>  1);
+		i |= (i >>  2);
+		i |= (i >>  4);
+		i |= (i >>  8);
+		i |= (i >> 16);
+		return i - (i >>> 1);
+	}
+
+	public static void main(String[] args) {
+		//sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
+
+		System.out.println(highestOneBit(15));
 	}
 }
 

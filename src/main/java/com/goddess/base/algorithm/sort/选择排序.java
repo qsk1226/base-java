@@ -14,30 +14,6 @@ import java.util.Arrays;
  **/
 public class 选择排序 {
 
-	public void selectSort(int[] array) {
-
-		for (int i = 0; i < array.length; i++) {
-			int minIndex = i;
-			int hand = array[i];
-			for (int j = i + 1; j < array.length; j++) {
-				int compare = array[j];
-				if (compare < hand) {
-					hand = compare;
-					minIndex = j;
-				}
-			}
-
-			// 将找到的最小值和i位置所在的值进行交换
-			if (i != minIndex) {
-				int tmp = array[i];
-				array[i] = array[minIndex];
-				array[minIndex] = tmp;
-			}
-
-		}
-		System.out.println(Arrays.toString(array));
-	}
-
 	public static void main(String[] args) {
 		选择排序 选择排序 = new 选择排序();
 		选择排序.sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});

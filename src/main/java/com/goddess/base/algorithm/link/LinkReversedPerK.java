@@ -22,7 +22,6 @@ public class LinkReversedPerK {
 			stack.push(cur);
 			if (stack.size() == k) {
 				pre = reverse(stack, pre, next);
-
 				newHead = newHead == head ? cur : newHead;
 			}
 			cur = next;
@@ -56,7 +55,12 @@ public class LinkReversedPerK {
 		head.next.next.next.next.next.next.next = new MyNode(8);
 
 		LinkReversedPerK p = new LinkReversedPerK();
-		p.reverseByStack(head, 3);
+		MyNode myNode = p.reverseByStack(head, 3);
+
+		while (myNode != null) {
+			System.out.print(myNode.value + "--->");
+			myNode = myNode.next;
+		}
 
 	}
 

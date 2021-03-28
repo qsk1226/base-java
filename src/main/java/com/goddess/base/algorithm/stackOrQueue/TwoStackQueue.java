@@ -13,7 +13,7 @@ public class TwoStackQueue {
 	private Stack<Integer> stackPush;
 	private Stack<Integer> stackPop;
 
-	public TwoStackQueue(Stack<Integer> stackPush, Stack<Integer> stackPop) {
+	public TwoStackQueue() {
 		this.stackPush = new Stack<>();
 		this.stackPop = new Stack<>();
 	}

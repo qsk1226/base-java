@@ -99,12 +99,15 @@ public class TreeIterator {
 	}
 
 	public static void main(String[] args) {
+		System.out.print("前序遍历:");
 		pre(root);
 		System.out.println("");
 
+		System.out.print("中序遍历:");
 		middle(root);
 		System.out.println("");
 
+		System.out.print("后续遍历:");
 		after(root);
 		System.out.println("");
 

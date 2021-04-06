@@ -26,6 +26,7 @@ public class IPConverter {
 
 
 	public static String int2IP(int ipInteger) {
+		if (ipInteger == -1) return "255.255.255.255";
 		String[] ipStr = new String[4];
 		for (int i = 0; i < 4; i++) {
 			int tmp = ipInteger & (255 << (8 * i));
@@ -37,12 +38,10 @@ public class IPConverter {
 
 
 	public static void main(String[] args) {
-		int intIP = ip2Int("192.168.0.1");
+		int intIP = ip2Int("255.255.255.255");
 		System.out.println(intIP);// 16885952
 		System.out.println(int2IP(intIP));
 	}
-
-
 
 
 }

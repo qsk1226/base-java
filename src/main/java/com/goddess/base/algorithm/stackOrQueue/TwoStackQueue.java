@@ -1,5 +1,7 @@
 package com.goddess.base.algorithm.stackOrQueue;
 
+import com.sun.corba.se.impl.oa.toa.TOA;
+
 import java.util.Stack;
 
 /**
@@ -23,13 +25,20 @@ public class TwoStackQueue {
 	}
 
 	public int poll() {
-		if (stackPush.empty() || stackPop.empty()) {
-			throw new RuntimeException("空队列");
-		} else if (stackPop.empty()) {
+		if (!stackPop.empty()) return stackPop.pop();
+		if (stackPush.empty()) {
+			return -1;
+		} if (stackPop.empty()) {
 			while (!stackPush.empty())
 				stackPop.push(stackPush.pop());
 		}
 		return stackPop.pop();
+	}
+
+	public static void main(String[] args) {
+		TwoStackQueue twoStackQueue = new TwoStackQueue();
+		twoStackQueue.add(1);
+		twoStackQueue.poll();
 	}
 
 }

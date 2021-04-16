@@ -47,4 +47,7 @@ public class IsSubsequence {
 		IsSubsequence subsequence = new IsSubsequence();
 		System.out.println(subsequence.isSubsequence("aaaaaa", "bbaaaa"));
 	}
+
+
+
 }

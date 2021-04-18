@@ -1,7 +1,7 @@
 package com.goddess.base.algorithm.link;
 
 /**
- * 溢出单链表倒数第 K 个节点
+ * 删除单链表倒数第 K 个节点
  *
  * @author qinshengke
  * @since 2021/3/14
@@ -25,5 +25,17 @@ public class RemoveLastKthNode {
 			cur.next = cur.next.next;
 		}
 		return head;
+	}
+
+
+	public static void main(String[] args) {
+		MyNode myNode = new MyNode(1);
+		myNode.next = new MyNode(2);
+		myNode.next.next = new MyNode(3);
+		myNode.next.next.next = new MyNode(4);
+		myNode.next.next.next.next = new MyNode(5);
+		RemoveLastKthNode removeLastKthNode = new RemoveLastKthNode();
+		MyNode myNode1 = removeLastKthNode.removeLastKthNode(myNode, 4);
+		System.out.println(myNode1.value);
 	}
 }

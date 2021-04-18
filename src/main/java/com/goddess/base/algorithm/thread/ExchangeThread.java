@@ -1,13 +1,11 @@
-package com.goddess.base.algorithm;
+package com.goddess.base.algorithm.thread;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 两条线程交替执行
+ * 两条线程交替执行¬
  *
  * @author qinshengke
  * @since 2021/3/9
@@ -40,7 +38,9 @@ public class ExchangeThread {
 		}
 	}
 
-	/**==================================================*/
+	/**
+	 * ==================================================
+	 */
 	static final Object objLock = new Object();
 
 	/**
@@ -64,7 +64,10 @@ public class ExchangeThread {
 			}
 		}
 	}
-	/**==================================================*/
+
+	/**
+	 * ==================================================
+	 */
 	static final ReentrantLock twoConditionLock = new ReentrantLock();
 	static Condition condition1 = twoConditionLock.newCondition();
 	static Condition condition2 = twoConditionLock.newCondition();
@@ -79,7 +82,7 @@ public class ExchangeThread {
 					condition1.await();
 					condition2.signalAll();
 				}
-			}catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} finally {
 				twoConditionLock.unlock();
@@ -97,7 +100,7 @@ public class ExchangeThread {
 					condition1.signalAll();
 					condition2.await();
 				}
-			}catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} finally {
 				twoConditionLock.unlock();
@@ -105,7 +108,9 @@ public class ExchangeThread {
 		}
 	}
 
-	/**==================================================*/
+	/**
+	 * ==================================================
+	 */
 
 	public static void main(String[] args) throws InterruptedException {
 		/*

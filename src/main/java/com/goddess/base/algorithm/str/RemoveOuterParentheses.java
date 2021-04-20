@@ -2,7 +2,7 @@ package com.goddess.base.algorithm.str;
 
 /**
  * 去除最外层的括号
- * (()())(()) ---> ()()()
+ * (()()())(()) ---> ()()()
  *
  * @author qinshengke
  * @since 2021/4/15
@@ -17,5 +17,11 @@ public class RemoveOuterParentheses {
 			if (c == '(') ++level;
 		}
 		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+		String xx = "(()()())(())";
+		RemoveOuterParentheses removeOuterParentheses = new RemoveOuterParentheses();
+		System.out.println(removeOuterParentheses.removeOuterParentheses(xx));;
 	}
 }

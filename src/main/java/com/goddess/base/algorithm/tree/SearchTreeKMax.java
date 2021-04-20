@@ -1,8 +1,8 @@
 package com.goddess.base.algorithm.tree;
 
 /**
- * TODO
- *
+ * 二叉搜索树的第 k 大节点（倒序的中序遍历）
+ * 倒序的中序遍历，就是递减的顺序，在遍历的时候就可以计算第k个节点
  * @author qinshengke
  * @since 2021/4/18
  **/

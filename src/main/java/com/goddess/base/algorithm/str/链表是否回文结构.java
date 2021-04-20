@@ -1,14 +1,16 @@
-package com.goddess.base.algorithm.link;
+package com.goddess.base.algorithm.str;
+
+import com.goddess.base.algorithm.link.MyNode;
 
 import java.util.Stack;
 
 /**
- * 判断链表是否是字符串
+ * 链表是否是回文结构
  *
  * @author qinshengke
  * @since 2021/3/15
  **/
-public class 链表回文判断 {
+public class 链表是否回文结构 {
 
 	public boolean judge(MyNode head) {
 		Stack<MyNode> stack = new Stack<>();
@@ -16,7 +18,7 @@ public class 链表回文判断 {
 		MyNode current = head;
 		while (current != null) {
 			stack.push(current);
-			head = current.next;
+			current = current.next;
 		}
 
 		while (head != null) {

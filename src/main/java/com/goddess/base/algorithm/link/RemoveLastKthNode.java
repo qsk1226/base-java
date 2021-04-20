@@ -9,22 +9,23 @@ package com.goddess.base.algorithm.link;
 public class RemoveLastKthNode {
 
 	public MyNode removeLastKthNode(MyNode head, int lastKth) {
+
 		MyNode cur = head;
 		while (cur != null) {
 			lastKth--;
 			cur = cur.next;
 		}
 		if (lastKth == 0) {
-			head = head.next;
+			cur = head.next;
 		}
 		if (lastKth < 0) {
 			cur = head;
-			while (++lastKth != 0) {
+			while (lastKth++ != 0) {
 				cur = cur.next;
 			}
 			cur.next = cur.next.next;
 		}
-		return head;
+		return cur;
 	}
 
 

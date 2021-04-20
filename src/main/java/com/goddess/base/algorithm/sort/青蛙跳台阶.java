@@ -14,6 +14,7 @@ public class 青蛙跳台阶 {
 		if (number == 1) {
 			return 1;
 		}
+
 		if (number == 2) {
 			return 2;
 		}

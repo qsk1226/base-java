@@ -8,35 +8,34 @@ package com.goddess.base.algorithm.link;
  **/
 public class RemoveLastKthNode {
 
-	public MyNode removeLastKthNode(MyNode head, int lastKth) {
-
-		MyNode cur = head;
+	public ListNode removeLastKthNode(ListNode head, int lastKth) {
+		ListNode cur = head;
 		while (cur != null) {
 			lastKth--;
 			cur = cur.next;
 		}
 		if (lastKth == 0) {
-			cur = head.next;
+			head = head.next;
 		}
 		if (lastKth < 0) {
 			cur = head;
-			while (lastKth++ != 0) {
+			while (++lastKth != 0) {
 				cur = cur.next;
 			}
 			cur.next = cur.next.next;
 		}
-		return cur;
+		return head;
 	}
 
 
 	public static void main(String[] args) {
-		MyNode myNode = new MyNode(1);
-		myNode.next = new MyNode(2);
-		myNode.next.next = new MyNode(3);
-		myNode.next.next.next = new MyNode(4);
-		myNode.next.next.next.next = new MyNode(5);
+		ListNode listNode = new ListNode(1);
+		listNode.next = new ListNode(2);
+		listNode.next.next = new ListNode(3);
+		listNode.next.next.next = new ListNode(4);
+		listNode.next.next.next.next = new ListNode(5);
 		RemoveLastKthNode removeLastKthNode = new RemoveLastKthNode();
-		MyNode myNode1 = removeLastKthNode.removeLastKthNode(myNode, 4);
-		System.out.println(myNode1.value);
+		ListNode listNode1 = removeLastKthNode.removeLastKthNode(listNode, 4);
+		System.out.println(listNode1.value);
 	}
 }

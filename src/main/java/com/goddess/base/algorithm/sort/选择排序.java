@@ -40,5 +40,4 @@ public class 选择排序 {
 		System.out.println(Arrays.toString(array));
 		return array;
 	}
-
 }

@@ -12,10 +12,10 @@ import java.util.Stack;
  **/
 public class 链表是否回文结构 {
 
-	public boolean judge(MyNode head) {
-		Stack<MyNode> stack = new Stack<>();
+	public boolean judge(ListNode head) {
+		Stack<ListNode> stack = new Stack<>();
 
-		MyNode current = head;
+		ListNode current = head;
 		while (current != null) {
 			stack.push(current);
 			current = current.next;

@@ -10,13 +10,13 @@ import java.util.Stack;
  **/
 public class LinkReversedPerK {
 
-	public MyNode reverseByStack(MyNode head, int k) {
+	public ListNode reverseByStack(ListNode head, int k) {
 		if (k < 2) return head;
-		Stack<MyNode> stack = new Stack<>();
-		MyNode newHead = head;
-		MyNode cur = head;
-		MyNode pre = null;
-		MyNode next = null;
+		Stack<ListNode> stack = new Stack<>();
+		ListNode newHead = head;
+		ListNode cur = head;
+		ListNode pre = null;
+		ListNode next = null;
 		while (cur != null) {
 			next = cur.next;
 			stack.push(cur);
@@ -29,12 +29,12 @@ public class LinkReversedPerK {
 		return newHead;
 	}
 
-	private MyNode reverse(Stack<MyNode> stack, MyNode left, MyNode right) {
-		MyNode cur = stack.pop();
+	private ListNode reverse(Stack<ListNode> stack, ListNode left, ListNode right) {
+		ListNode cur = stack.pop();
 		if (left != null) {
 			left.next = cur;
 		}
-		MyNode next = null;
+		ListNode next = null;
 		while (!stack.isEmpty()) {
 			next = stack.pop();
 			cur.next = next;
@@ -45,21 +45,21 @@ public class LinkReversedPerK {
 	}
 
 	public static void main(String[] args) {
-		MyNode head = new MyNode(1);
-		head.next = new MyNode(2);
-		head.next.next = new MyNode(3);
-		head.next.next.next = new MyNode(4);
-		head.next.next.next.next = new MyNode(5);
-		head.next.next.next.next.next = new MyNode(6);
-		head.next.next.next.next.next.next = new MyNode(7);
-		head.next.next.next.next.next.next.next = new MyNode(8);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
+		head.next.next.next.next.next = new ListNode(6);
+		head.next.next.next.next.next.next = new ListNode(7);
+		head.next.next.next.next.next.next.next = new ListNode(8);
 
 		LinkReversedPerK p = new LinkReversedPerK();
-		MyNode myNode = p.reverseByStack(head, 3);
+		ListNode listNode = p.reverseByStack(head, 3);
 
-		while (myNode != null) {
-			System.out.print(myNode.value + "--->");
-			myNode = myNode.next;
+		while (listNode != null) {
+			System.out.print(listNode.value + "--->");
+			listNode = listNode.next;
 		}
 
 	}

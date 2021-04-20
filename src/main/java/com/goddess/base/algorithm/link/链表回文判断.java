@@ -10,10 +10,10 @@ import java.util.Stack;
  **/
 public class 链表回文判断 {
 
-	public boolean judge(MyNode head) {
-		Stack<MyNode> stack = new Stack<>();
+	public boolean judge(ListNode head) {
+		Stack<ListNode> stack = new Stack<>();
 
-		MyNode current = head;
+		ListNode current = head;
 		while (current != null) {
 			stack.push(current);
 			head = current.next;

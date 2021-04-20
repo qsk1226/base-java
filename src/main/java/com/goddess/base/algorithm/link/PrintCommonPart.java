@@ -19,7 +19,7 @@ package com.goddess.base.algorithm.link;
  **/
 public class PrintCommonPart {
 
-	public void printCommonPart(MyNode head1, MyNode head2) {
+	public void printCommonPart(ListNode head1, ListNode head2) {
 		while (head1 != null && head2 != null) {
 			if (head1.value < head2.value) {
 				head1 = head1.next;
@@ -35,14 +35,14 @@ public class PrintCommonPart {
 	}
 
 	public static void main(String[] args) {
-		MyNode myNode = new MyNode(1);
-		myNode.next = new MyNode(2);
-		myNode.next.next = new MyNode(3);
+		ListNode listNode = new ListNode(1);
+		listNode.next = new ListNode(2);
+		listNode.next.next = new ListNode(3);
 
-		MyNode myNode1 = new MyNode(1);
+		ListNode listNode1 = new ListNode(1);
 
 		PrintCommonPart printCommonPart = new PrintCommonPart();
-		printCommonPart.printCommonPart(myNode,myNode1);
+		printCommonPart.printCommonPart(listNode, listNode1);
 	}
 
 }

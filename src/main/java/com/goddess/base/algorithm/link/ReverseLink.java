@@ -8,9 +8,9 @@ package com.goddess.base.algorithm.link;
  **/
 public class ReverseLink {
 
-	public MyNode reverseLink(MyNode head) {
-		MyNode pre = null;
-		MyNode next = null;
+	public ListNode reverseLink(ListNode head) {
+		ListNode pre = null;
+		ListNode next = null;
 
 		while (head != null) {
 			next = head.next;

@@ -12,10 +12,10 @@ package com.goddess.base.algorithm.link;
  **/
 public class LinkNodeShareNode {
 
-	public static MyNode xx(MyNode head1, MyNode head2) {
+	public static ListNode xx(ListNode head1, ListNode head2) {
 
-		MyNode a = head1;
-		MyNode b = head2;
+		ListNode a = head1;
+		ListNode b = head2;
 
 		while (a != b) {
 			a = a.next == null ? head2 : a.next;
@@ -25,22 +25,22 @@ public class LinkNodeShareNode {
 	}
 
 	public static void main(String[] args) {
-		MyNode n6 = new MyNode(6);
-		n6.next = new MyNode(7);
-		n6.next.next = new MyNode(8);
+		ListNode n6 = new ListNode(6);
+		n6.next = new ListNode(7);
+		n6.next.next = new ListNode(8);
 
-		MyNode head = new MyNode(1);
-		head.next = new MyNode(2);
-		head.next.next = new MyNode(3);
-		head.next.next.next = new MyNode(4);
-		head.next.next.next.next = new MyNode(5);
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(4);
+		head.next.next.next.next = new ListNode(5);
 		head.next.next.next.next.next = n6;
 
-		MyNode head2 = new MyNode(11);
-		head2.next = new MyNode(21);
-		head2.next.next = new MyNode(31);
-		head2.next.next.next = new MyNode(41);
-		head2.next.next.next.next = new MyNode(51);
+		ListNode head2 = new ListNode(11);
+		head2.next = new ListNode(21);
+		head2.next.next = new ListNode(31);
+		head2.next.next.next = new ListNode(41);
+		head2.next.next.next.next = new ListNode(51);
 		head2.next.next.next.next.next = n6;
 
 		System.out.println(xx(head, head2).value);

@@ -11,9 +11,9 @@ public class GetLastKNode {
 	/**
 	 * 双指针方案
 	 */
-	public MyNode removeLastKthNode1(MyNode head, int lastKth) {
-		MyNode p = head;
-		MyNode q = head;
+	public ListNode removeLastKthNode1(ListNode head, int lastKth) {
+		ListNode p = head;
+		ListNode q = head;
 
 		while (lastKth != 0) {
 			p = p.next;

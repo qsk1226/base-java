@@ -14,8 +14,8 @@ public class LinkCycleOrNot {
 		}
 		ListNode fast = head, slow = head;
 		while (fast.next != null) {
-			fast = fast.next.next;
 			slow = slow.next;
+			fast = fast.next.next;
 			if (fast == slow) {
 				return true;
 			}
@@ -23,13 +23,4 @@ public class LinkCycleOrNot {
 		return false;
 	}
 
-	class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
 }

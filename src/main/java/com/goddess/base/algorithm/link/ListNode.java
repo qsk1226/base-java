@@ -6,11 +6,11 @@ package com.goddess.base.algorithm.link;
  * @author qinshengke
  * @since 2021/3/15
  **/
-public class MyNode {
+public class ListNode {
 	public int value;
-	public MyNode next;
+	public ListNode next;
 
-	public MyNode(int value) {
+	public ListNode(int value) {
 		this.value = value;
 	}
 }

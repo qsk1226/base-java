@@ -8,9 +8,9 @@ package com.goddess.base.algorithm.link;
  **/
 public class JosephKill {
 
-	public MyNode josephKill(MyNode head, int n) {
+	public ListNode josephKill(ListNode head, int n) {
 		// 寻找出last 节点
-		MyNode last = head;
+		ListNode last = head;
 		while (last.next != head) {
 			last = last.next;
 		}

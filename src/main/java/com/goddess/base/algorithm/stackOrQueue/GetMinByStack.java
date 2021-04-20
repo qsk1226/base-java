@@ -9,12 +9,12 @@ import java.util.Stack;
  * @since 2021/3/14
  **/
 public class GetMinByStack {
-	private Stack<Integer> stackData;
-	private Stack<Integer> stackMin;
+	private final Stack<Integer> stackData;
+	private final Stack<Integer> stackMin;
 
 	public GetMinByStack() {
-		this.stackData = new Stack();
-		this.stackMin = new Stack();
+		this.stackData = new Stack<>();
+		this.stackMin = new Stack<>();
 	}
 
 	public void push(int newNum) {
@@ -28,7 +28,7 @@ public class GetMinByStack {
 
 	public int pop(){
 		Integer pop = stackData.pop();
-		if (pop == getMin()) {
+		if (pop.equals(getMin())) {
 			stackMin.pop();
 		}
 		return pop;

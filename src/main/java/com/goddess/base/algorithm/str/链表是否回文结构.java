@@ -1,6 +1,6 @@
 package com.goddess.base.algorithm.str;
 
-import com.goddess.base.algorithm.link.MyNode;
+import com.goddess.base.algorithm.link.ListNode;
 
 import java.util.Stack;
 

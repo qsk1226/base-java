@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author qinshengke
  * @since 2021/4/16
  **/
-class SortedArrayToBST {
+public class SortedArrayToBST {
 	public TreeNode sortedArrayToBST(int[] nums) {
 		return sortedArrayToBST(nums, 0, nums.length);
 	}

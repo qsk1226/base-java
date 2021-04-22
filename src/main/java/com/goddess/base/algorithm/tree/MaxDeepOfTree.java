@@ -4,12 +4,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 一颗树的最大深度
+ * 一颗树的最大深度，要记录每一层的边缘位置，然后和要层序遍历的最后一
  *
  * @author qinshengke
  * @since 2021/4/16
  **/
 public class MaxDeepOfTree {
+
+
 	public int bfs(TreeNode root) {
 		if (root == null) return 0;
 
@@ -38,4 +40,5 @@ public class MaxDeepOfTree {
 		}
 		return level;
 	}
+
 }

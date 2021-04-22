@@ -1,7 +1,5 @@
 package com.goddess.base.algorithm.str;
 
-import java.math.BigInteger;
-
 /**
  * IPV4 与 整数之间的转换
  * IPV6 128位

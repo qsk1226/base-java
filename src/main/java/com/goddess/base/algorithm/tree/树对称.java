@@ -36,7 +36,9 @@ public class 树对称 {
 		}
 	}
 
-
+	/**
+	 * 树是否是对称的
+	 */
 	public boolean BFS(TreeNode root) {
 		if (root == null)
 			return true;

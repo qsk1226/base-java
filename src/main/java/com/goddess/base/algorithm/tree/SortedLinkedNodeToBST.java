@@ -1,6 +1,6 @@
 package com.goddess.base.algorithm.tree;
 
-import com.goddess.base.algorithm.link.MyNode;
+import com.goddess.base.algorithm.link.ListNode;
 
 /**
  * 有序链表转换为二叉搜索树
@@ -10,11 +10,11 @@ import com.goddess.base.algorithm.link.MyNode;
  **/
 public class SortedLinkedNodeToBST {
 
-	public TreeNode sortedListToBST(MyNode head) {
+	public TreeNode sortedListToBST(ListNode head) {
 		if (head == null) return null;
 		if (head.next == null)  return new TreeNode(head.value);
 		//这里通过快慢指针找到链表的中间结点slow，pre就是中间, 结点slow的前一个结点
-		MyNode slow = head, fast = head, pre = null;
+		ListNode slow = head, fast = head, pre = null;
 		while (fast != null && fast.next != null) {
 			pre = slow;
 			slow = slow.next;

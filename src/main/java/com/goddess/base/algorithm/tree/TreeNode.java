@@ -7,20 +7,20 @@ package com.goddess.base.algorithm.tree;
  * @since 2021/3/15
  **/
 public class TreeNode {
-	protected Integer value;
+	protected Integer val;
 	protected TreeNode left;
 	protected TreeNode right;
 
 	public TreeNode(Integer value) {
-		this.value = value;
+		this.val = value;
 	}
 
-	public Integer getValue() {
-		return value;
+	public Integer getVal() {
+		return val;
 	}
 
-	public void setValue(Integer value) {
-		this.value = value;
+	public void setVal(Integer val) {
+		this.val = val;
 	}
 
 	public TreeNode getLeft() {

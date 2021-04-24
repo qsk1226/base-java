@@ -3,7 +3,6 @@ package com.goddess.base.algorithm.tree;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * 换行输出树的每一行(包含行号)
@@ -22,7 +21,7 @@ public class PrintTreeByLevel {
 		System.out.print("level-" + (level++) + "  ===>  ");
 		while (!queue.isEmpty()) {
 			TreeNode node = queue.poll();
-			System.out.print(node.getValue());
+			System.out.print(node.getVal());
 
 			if (node.getLeft() != null) {
 				queue.offer(node.getLeft());
@@ -72,7 +71,7 @@ public class PrintTreeByLevel {
 				}
 			}
 
-			System.out.print(head.getValue() + "  ");
+			System.out.print(head.getVal() + "  ");
 			if (head == last && !dq.isEmpty()) {
 				lr = !lr;
 				last = nLast;

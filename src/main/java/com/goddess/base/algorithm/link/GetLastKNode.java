@@ -26,4 +26,38 @@ public class GetLastKNode {
 		return q;
 	}
 
+	public ListNode getKthFromEnd(ListNode head, int k) {
+		if (head == null) return null;
+		ListNode cur = head;
+		ListNode result = head;
+		while(k!=0 && cur != null) {
+			cur = cur.next;
+			k--;
+		}
+		if (cur ==null) return head;
+		while(cur != null) {
+			cur = cur.next;
+			result = result.next;
+		}
+		return result;
+	}
+
+	public ListNode getKthFromEnd1(ListNode head, int k) {
+		ListNode cur = head;
+		while (cur!=null) {
+			k--;
+			cur = cur.next;
+		}
+		if (k == 0) cur = head;
+
+		if (k < 0) {
+			cur = head;
+			while(k++ != 0) {
+				cur = cur.next;
+			}
+		}
+		return cur;
+	}
+
+
 }

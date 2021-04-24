@@ -22,7 +22,7 @@ public class 链表是否回文结构 {
 		}
 
 		while (head != null) {
-			if (head.value != stack.pop().value) return false;
+			if (head.val != stack.pop().val) return false;
 			head = head.next;
 		}
 		return true;

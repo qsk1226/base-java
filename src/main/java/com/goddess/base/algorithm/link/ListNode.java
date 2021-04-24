@@ -7,10 +7,22 @@ package com.goddess.base.algorithm.link;
  * @since 2021/3/15
  **/
 public class ListNode {
-	public int value;
+	public int val;
 	public ListNode next;
 
-	public ListNode(int value) {
-		this.value = value;
+	public ListNode(int val) {
+		this.val = val;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		ListNode tmp = this;
+		while (tmp != null) {
+			sb.append(tmp.val);
+			tmp = tmp.next;
+		}
+
+		return sb.toString();
 	}
 }

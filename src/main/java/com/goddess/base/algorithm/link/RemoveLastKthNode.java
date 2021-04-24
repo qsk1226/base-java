@@ -36,6 +36,6 @@ public class RemoveLastKthNode {
 		listNode.next.next.next.next = new ListNode(5);
 		RemoveLastKthNode removeLastKthNode = new RemoveLastKthNode();
 		ListNode listNode1 = removeLastKthNode.removeLastKthNode(listNode, 4);
-		System.out.println(listNode1.value);
+		System.out.println(listNode1.val);
 	}
 }

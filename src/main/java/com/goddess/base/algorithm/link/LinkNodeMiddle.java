@@ -18,7 +18,7 @@ public class LinkNodeMiddle {
 			cur = cur.next.next;
 			middle ++;
 		}
-		System.out.println(pre.value);
+		System.out.println(pre.val);
 		return middle;
 	}
 

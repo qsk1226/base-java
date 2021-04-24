@@ -27,10 +27,10 @@ public class MinDiffInBST {
 		}
 		midSearch(root.getLeft());
 		if (pre == -1) {
-			pre = root.getValue();
+			pre = root.getVal();
 		} else {
-			ans = Math.min(ans, root.getValue() - pre);
-			pre = root.getValue();
+			ans = Math.min(ans, root.getVal() - pre);
+			pre = root.getVal();
 		}
 		midSearch(root.getRight());
 	}

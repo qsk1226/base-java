@@ -58,7 +58,7 @@ public class LinkReversedPerK {
 		ListNode listNode = p.reverseByStack(head, 3);
 
 		while (listNode != null) {
-			System.out.print(listNode.value + "--->");
+			System.out.print(listNode.val + "--->");
 			listNode = listNode.next;
 		}
 

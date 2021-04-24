@@ -43,7 +43,7 @@ public class LinkNodeShareNode {
 		head2.next.next.next.next = new ListNode(51);
 		head2.next.next.next.next.next = n6;
 
-		System.out.println(xx(head, head2).value);
+		System.out.println(xx(head, head2).val);
 
 	}
 

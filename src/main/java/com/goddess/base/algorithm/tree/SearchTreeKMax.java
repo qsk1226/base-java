@@ -23,7 +23,7 @@ public class SearchTreeKMax {
 		if (k == 0) return;
 
 		if (--k == 0) {
-			res = root.value;
+			res = root.val;
 		}
 		dfs(root.left);
 	}

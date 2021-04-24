@@ -12,7 +12,7 @@ public class SortedLinkedNodeToBST {
 
 	public TreeNode sortedListToBST(ListNode head) {
 		if (head == null) return null;
-		if (head.next == null)  return new TreeNode(head.value);
+		if (head.next == null)  return new TreeNode(head.val);
 		//这里通过快慢指针找到链表的中间结点slow，pre就是中间, 结点slow的前一个结点
 		ListNode slow = head, fast = head, pre = null;
 		while (fast != null && fast.next != null) {
@@ -22,7 +22,7 @@ public class SortedLinkedNodeToBST {
 		}
 		//链表断开为两部分，一部分是node的左子节点，一部分是node的右子节点
 		pre.next = null;
-		TreeNode node = new TreeNode(slow.value);
+		TreeNode node = new TreeNode(slow.val);
 		node.left = sortedListToBST(head);
 		node.right = sortedListToBST(slow.next);
 		return node;

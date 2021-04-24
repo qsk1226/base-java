@@ -19,23 +19,6 @@ public class 树对称 {
 		root.right.right = new TreeNode(3);
 	}
 
-
-	class TreeNode {
-		int val = 0;
-		TreeNode left = null;
-		TreeNode right = null;
-
-		public TreeNode(int val) {
-			this.val = val;
-		}
-
-		public TreeNode(int val, TreeNode left, TreeNode right) {
-			this.val = val;
-			this.left = left;
-			this.right = right;
-		}
-	}
-
 	/**
 	 * 树是否是对称的
 	 */

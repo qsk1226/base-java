@@ -14,7 +14,7 @@ public class MergeListNode {
 			if (l1.val < l2.val) {
 				tmp.next = l1;
 				l1 = l1.next;
-			} else if (l1.val > l2.val) {
+			} else {
 				tmp.next = l2;
 				l2 = l2.next;
 			}

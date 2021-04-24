@@ -10,7 +10,7 @@ import java.util.Queue;
  * @author qinshengke
  * @since 2021/3/27
  **/
-public class PrintTreeByLevel {
+public class 逐层输出树或者按照Z顺序输出树 {
 
 	public void printByLevel(TreeNode root) {
 		Queue<TreeNode> queue = new LinkedList<>();
@@ -100,7 +100,7 @@ public class PrintTreeByLevel {
 		left.setRight(new TreeNode(5));
 
 		right.setLeft(new TreeNode(9));
-		PrintTreeByLevel printTreeByLevel = new PrintTreeByLevel();
+		逐层输出树或者按照Z顺序输出树 printTreeByLevel = new 逐层输出树或者按照Z顺序输出树();
 		printTreeByLevel.printByLevel(root);
 
 		System.out.println("\n====================");

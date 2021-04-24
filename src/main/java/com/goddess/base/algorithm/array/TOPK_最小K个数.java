@@ -10,7 +10,7 @@ import java.util.Queue;
  * @author qinshengke
  * @since 2021/4/24
  **/
-class GetLeastNumbers {
+class TOPK_最小K个数 {
 
 	public int[] getLeastNumbers(int[] arr, int k) {
 		if (k == 0 || arr.length == 0) {

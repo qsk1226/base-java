@@ -18,8 +18,8 @@ public class LinkNodeShareNode {
 		ListNode b = head2;
 
 		while (a != b) {
-			a = a.next == null ? head2 : a.next;
-			b = b.next == null ? head1 : b.next;
+			a = a == null ? head2 : a.next;
+			b = b == null ? head1 : b.next;
 		}
 		return a;
 	}

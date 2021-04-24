@@ -1,5 +1,8 @@
 package com.goddess.base.algorithm.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 判断一颗树是否为平衡二叉树
  *
@@ -35,6 +38,34 @@ public class BalanceTree {
 		return Math.max(lh, rh);
 	}
 
+	boolean result = true;
+	public int dfs(TreeNode root, int level) {
+		if (root == null) return  level;
 
+		int ld = dfs(root.left, level+1);
+		if (!result) return level;
+		System.out.println(root);
+		int rd = dfs(root.right, level+1);
+		if (!result) return level;
 
+		if (Math.abs(rd - ld) > 1) {
+			result = false;
+		}
+
+		return Math.max(ld,rd);
+	}
+
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(4);
+		root.left = new TreeNode(3);
+		root.right = new TreeNode(5);
+		root.left.left=new TreeNode(1);
+		root.left.right = new TreeNode(2);
+		root.left.left.left = new TreeNode(0);
+
+		BalanceTree balanceTree = new BalanceTree();
+		System.out.println(balanceTree.dfs(root,1));
+		System.out.println(balanceTree.result);
+
+	}
 }

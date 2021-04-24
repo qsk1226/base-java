@@ -6,7 +6,7 @@ package com.goddess.base.algorithm.dynamicRule;
  * @author qinshengke
  * @since 2021/4/16
  **/
-public class climbStairs {
+public class 爬楼梯 {
 	public int climbStairs(int n) {
 		return f(n);
 	}

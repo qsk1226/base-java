@@ -11,13 +11,12 @@ import java.util.Arrays;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] arr = new int[]{11, 1, 33, 2, 9, 13, 44, 5};
-		int[] xx = xx(arr, 0, arr.length - 1);
+		int[] arr = new int[]{0,11, 1, 33, 2, 9, 13, 44, 5};
+		int[] xx = quickSort(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(xx));
 	}
 
-
-	public static int[] xx(int[] array,int low,int high) {
+	public static int[] quickSort(int[] array,int low,int high) {
 
 		if (low < high) {
 			int jizhun = array[low];
@@ -30,14 +29,16 @@ public class QuickSort {
 					index++;
 				}
 			}
+
 			int tmp = array[low];
 			array[low] = array[index - 1];
 			array[index - 1] = tmp;
 
-			xx(array, low, index-1);
-			xx(array, index+1, high);
+			quickSort(array, low, index-1);
+			quickSort(array, index, high);
 		}
 		return array;
-
 	}
+
+
 }

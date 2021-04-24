@@ -6,7 +6,7 @@ package com.goddess.base.algorithm.dynamicRule;
  * @author qinshengke
  * @since 2021/4/16
  **/
-public class MaxSubArray {
+public class 数组找到一个具有最大和的连续子数组的最大和 {
 
 
 	public int maxSubArray(int[] nums) {
@@ -56,7 +56,7 @@ public class MaxSubArray {
 	}
 
 	public static void main(String[] args) {
-		MaxSubArray maxSubArray = new MaxSubArray();
+		数组找到一个具有最大和的连续子数组的最大和 maxSubArray = new 数组找到一个具有最大和的连续子数组的最大和();
 		int[] array = new int[]{-2,1,-3,4,-1,2,1,-5,4};
 		System.out.println(maxSubArray.maxSubArrayx(array));
 	}

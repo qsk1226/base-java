@@ -24,7 +24,6 @@ public class 二叉树两个节点最近的公共祖先 {
 			return findRight;
 		else
 			return findLeft;
-
 	}
 
 

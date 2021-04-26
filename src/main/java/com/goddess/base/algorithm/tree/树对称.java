@@ -40,8 +40,8 @@ public class 树对称 {
 				TreeNode left = queue.poll();
 				TreeNode right = queue.poll();
 				size -= 2;
-
-				if ((left == null || right == null) && left != right)//不能删除里面的括号，&&优先级高于||
+				//不能删除里面的括号，&&优先级高于||
+				if ((left == null || right == null) && left != right)
 					return false;
 				if (left == null || right == null)
 					continue;

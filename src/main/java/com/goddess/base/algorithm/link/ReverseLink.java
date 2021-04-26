@@ -10,6 +10,9 @@ import java.util.Stack;
  **/
 public class ReverseLink {
 
+	/**
+	 * 反转链表
+	 */
 	public static ListNode reverseLink(ListNode head) {
 		ListNode pre = null;
 		ListNode next = null;

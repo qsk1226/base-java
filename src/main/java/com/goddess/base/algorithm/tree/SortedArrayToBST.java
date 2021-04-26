@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
- *
  * @author qinshengke
  * @since 2021/4/16
  **/

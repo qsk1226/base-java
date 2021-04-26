@@ -9,7 +9,9 @@ import java.util.Stack;
  * @since 2021/3/26
  **/
 public class LinkReversedPerK {
-
+	/**
+	 * 链表每 K 个元素进行反转
+	 */
 	public ListNode reverseByStack(ListNode head, int k) {
 		if (k < 2) return head;
 		Stack<ListNode> stack = new Stack<>();

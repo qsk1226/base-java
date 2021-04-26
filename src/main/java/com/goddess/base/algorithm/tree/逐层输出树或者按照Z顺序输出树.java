@@ -39,13 +39,11 @@ public class 逐层输出树或者按照Z顺序输出树 {
 			}
 		}
 	}
-
+	// Z 字型逐层输出树
 	public void printByZigZag(TreeNode head) {
 		Deque<TreeNode> dq = new LinkedList<>();
-		int level = 1;
-		boolean lr = true;
-		TreeNode last = head;
-		TreeNode nLast = null;
+		int level = 1;       boolean lr = true;
+		TreeNode last = head;    TreeNode nLast = null;
 		dq.offerFirst(head);
 		printLevel(level++, lr);
 		while (!dq.isEmpty()) {
@@ -70,7 +68,6 @@ public class 逐层输出树或者按照Z顺序输出树 {
 					dq.offerFirst(head.getLeft());
 				}
 			}
-
 			System.out.print(head.getVal() + "  ");
 			if (head == last && !dq.isEmpty()) {
 				lr = !lr;
@@ -82,7 +79,6 @@ public class 逐层输出树或者按照Z顺序输出树 {
 		}
 		System.out.println();
 	}
-
 	public void printLevel(int level, boolean lr) {
 		System.out.print("level-" + level + " from ");
 		System.out.print(lr ? "left to right: " : "right to left : ");

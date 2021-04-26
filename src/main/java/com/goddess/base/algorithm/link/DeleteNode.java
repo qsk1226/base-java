@@ -25,7 +25,9 @@ public class DeleteNode {
 		return head;
 	}
 
-
+	/**
+	 * 链表删除指定节点
+	 */
 	public static ListNode deleteNode1(ListNode head, int val) {
 		if (head == null) return null;
 		if (head.val == val) return head.next;

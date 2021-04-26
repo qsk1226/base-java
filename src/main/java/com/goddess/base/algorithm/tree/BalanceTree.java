@@ -37,7 +37,9 @@ public class BalanceTree {
 		}
 		return Math.max(lh, rh);
 	}
-
+	/**
+	 * 判断一个数是否是平衡树
+	 */
 	boolean result = true;
 	public int dfs(TreeNode root, int level) {
 		if (root == null) return  level;

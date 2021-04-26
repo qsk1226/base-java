@@ -18,7 +18,9 @@ package com.goddess.base.algorithm.link;
  * @since 2021/3/14
  **/
 public class PrintCommonPart {
-
+	/**
+	 * 打印两个有序链表的公共部分
+	 */
 	public void printCommonPart(ListNode head1, ListNode head2) {
 		while (head1 != null && head2 != null) {
 			if (head1.val < head2.val) {

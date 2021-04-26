@@ -7,7 +7,9 @@ package com.goddess.base.algorithm.link;
  * @since 2021/4/23
  **/
 public class MergeListNode {
-
+	/**
+	 * 合并两个有序链表
+	 */
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		ListNode tmp = new ListNode(0);
 		while (l1 != null && l2 != null) {

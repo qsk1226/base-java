@@ -18,6 +18,7 @@ public class FindContinuousSequence {
 		findContinuousSequence(9);
 	}
 	/**
+	 * 输入一个正整数 target ，输出所有和为 target 的  连续正整数序列（至少含有两个数）。
 	 * 滑动窗口解法
 	 */
 	public static int[][] findContinuousSequence(int target) {

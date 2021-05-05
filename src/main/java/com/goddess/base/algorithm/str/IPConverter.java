@@ -1,5 +1,8 @@
 package com.goddess.base.algorithm.str;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * IPV4 与 整数之间的转换
  * IPV6 128位
@@ -21,7 +24,6 @@ public class IPConverter {
 		}
 		return result;
 	}
-
 
 	public static String int2IP(int ipInteger) {
 		if (ipInteger == -1) return "255.255.255.255";

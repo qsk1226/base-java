@@ -8,7 +8,6 @@ package com.goddess.base.algorithm.dynamicRule;
  **/
 public class 数组找到一个具有最大和的连续子数组的最大和 {
 
-
 	public int maxSubArray(int[] nums) {
 		int pre = 0, maxAns = nums[0];
 		for (int x : nums) {

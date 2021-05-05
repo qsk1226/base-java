@@ -1,6 +1,7 @@
 package com.goddess.base.algorithm.tree;
 
 import java.util.Arrays;
+import java.util.Queue;
 
 /**
  * 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
@@ -20,6 +21,7 @@ public class SortedArrayToBST {
 		TreeNode root = new TreeNode(nums[mid]);
 		root.left = sortedArrayToBST(Arrays.copyOfRange(nums, 0, mid));
 		root.right = sortedArrayToBST(Arrays.copyOfRange(nums, mid + 1, nums.length));
+
 		return root;
 	}
 

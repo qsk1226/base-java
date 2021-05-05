@@ -29,6 +29,7 @@ public class FindContinuousSequence {
 
 		while (i <= target / 2) {
 			if (sum < target) {
+
 				// 右边界向右移动
 				sum += j;
 				j++;

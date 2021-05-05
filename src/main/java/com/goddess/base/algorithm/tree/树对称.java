@@ -35,24 +35,21 @@ public class 树对称 {
 		queue.add(root.right);
 
 		while (!queue.isEmpty()) {
-			int size = queue.size();
-			while (size > 0) {
-				TreeNode left = queue.poll();
-				TreeNode right = queue.poll();
-				size -= 2;
-				//不能删除里面的括号，&&优先级高于||
-				if ((left == null || right == null) && left != right)
-					return false;
-				if (left == null || right == null)
-					continue;
-				if (left.val != right.val)
-					return false;
 
-				queue.add(left.left);
-				queue.add(right.right);
-				queue.add(left.right);
-				queue.add(right.left);
-			}
+			TreeNode left = queue.poll();
+			TreeNode right = queue.poll();
+			//不能删除里面的括号，&&优先级高于||
+			if ((left == null || right == null) && left != right)
+				return false;
+			if (left == null || right == null)
+				continue;
+			if (left.val != right.val)
+				return false;
+
+			queue.add(left.left);
+			queue.add(right.right);
+			queue.add(left.right);
+			queue.add(right.left);
 		}
 
 		return isMirror;

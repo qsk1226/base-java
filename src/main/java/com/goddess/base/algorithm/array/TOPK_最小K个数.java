@@ -11,7 +11,10 @@ import java.util.Queue;
  * @since 2021/4/24
  **/
 class TOPK_最小K个数 {
-
+	public static void main(String[] args) {
+		TOPK_最小K个数 xx = new TOPK_最小K个数();
+		xx.getLeastNumbers1(new int[]{1,2,3}, 2);
+	}
 	public int[] getLeastNumbers(int[] arr, int k) {
 		if (k == 0 || arr.length == 0) {
 			return new int[0];

@@ -1,7 +1,7 @@
 package com.goddess.base.algorithm.sort;
 
 /**
- * .
+ * 希尔排序
  *
  * @author qinshengke
  * @since 2021/3/3

@@ -3,6 +3,8 @@ package com.goddess.base.algorithm.array;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.stream.IntStream;
+
 /**
  * TOP K 问题，最小 K 个数
  * 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
@@ -13,8 +15,9 @@ import java.util.Queue;
 class TOPK_最小K个数 {
 	public static void main(String[] args) {
 		TOPK_最小K个数 xx = new TOPK_最小K个数();
-		xx.getLeastNumbers1(new int[]{1,2,3}, 2);
+		xx.getLeastNumbers(new int[]{1,2,3}, 2);
 	}
+
 	public int[] getLeastNumbers(int[] arr, int k) {
 		if (k == 0 || arr.length == 0) {
 			return new int[0];
@@ -25,31 +28,36 @@ class TOPK_最小K个数 {
 
 	private int[] quickSearch(int[] nums, int low, int high, int k) {
 		// 每快排切分1次，找到排序后下标为j的元素，如果j恰好等于k就返回j以及j左边所有的数；
-		int j = partition(nums, low, high);
-		if (j == k) {
-			return Arrays.copyOf(nums, j + 1);
+		int index = partition(nums, low, high);
+		if (index == k) {
+			int[] res = new int[k+1];
+			IntStream.rangeClosed(0, k).forEach(m -> res[m] = nums[m]);
+			return res;
 		}
 		// 否则根据下标j与k的大小关系来决定继续切分左段还是右段。
-		return j > k ? quickSearch(nums, low, j - 1, k) : quickSearch(nums, j + 1, high, k);
+		return index > k ? quickSearch(nums, low, index - 1, k) : quickSearch(nums, index + 1, high, k);
 	}
 
 	// 快排切分，返回下标j，使得比nums[j]小的数都在j的左边，比nums[j]大的数都在j的右边。
-	private int partition(int[] nums, int low, int high) {
-		int v = nums[low];
-		int i = low, j = high + 1;
-		while (true) {
-			while (++i <= high && nums[i] < v) ;
-			while (--j >= low && nums[j] > v) ;
-			if (i >= j) {
-				break;
+	private int partition(int[] array, int low, int high) {
+		int jizhun = array[low];
+		int index = low + 1;
+		if (low < high) {
+			for (int i = index; i <= high; i++) {
+				if (array[i] < jizhun) {
+					int tmp = array[i];
+					array[i] = array[index];
+					array[index] = tmp;
+					index++;
+				}
 			}
-			int t = nums[j];
-			nums[j] = nums[i];
-			nums[i] = t;
+
+			int tmp = array[low];
+			array[low] = array[index - 1];
+			array[index - 1] = tmp;
+
 		}
-		nums[low] = nums[j];
-		nums[j] = v;
-		return j;
+		return index;
 	}
 
 	// ===========================================================

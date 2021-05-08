@@ -17,15 +17,17 @@ public class QuickSort {
 	}
 
 	public static int[] quickSort(int[] array,int low,int high) {
-
+		int pivot = low + (int) (Math.random() * (high - low + 1));
+		swap(array, pivot, low);
+		int jizhun = array[low];
+		int index = low + 1;
 		if (low < high) {
-			int jizhun = array[low];
-			int index = low + 1;
 			for (int i = index; i <= high; i++) {
 				if (array[i] < jizhun) {
 					int tmp = array[i];
 					array[i] = array[index];
 					array[index] = tmp;
+
 					index++;
 				}
 			}
@@ -39,6 +41,10 @@ public class QuickSort {
 		}
 		return array;
 	}
-
+	private static void swap(int[] nums, int i, int j){
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;
+	}
 
 }

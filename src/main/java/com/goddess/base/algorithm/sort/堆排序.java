@@ -1,9 +1,11 @@
 package com.goddess.base.algorithm.sort;
 
-import java.util.Arrays;
-
 /**
- * 堆排序
+ * 堆排序，使用数组存储堆的时候
+ * 父节点、左子树和右字数的位置
+ * int parent = index/2;
+ * int left = 2 * index + 1;
+ * int right = 2 * index + 2;
  *
  * @author qinshengke
  * @since 2021/5/7
@@ -11,48 +13,35 @@ import java.util.Arrays;
 public class 堆排序 {
 
 	public int[] sortArray(int[] nums) {
-
 		int len = nums.length;
-		int[] array = new int[len + 1];
-
-		for (int i = 0; i < nums.length; ++i) {
-			array[i + 1] = nums[i];
+		for(int i = len/2 - 1; i >= 0; i--){
+			shiftDown(nums, i, len - 1);
 		}
-		//下沉建堆
-		for (int i = len / 2; i >= 1; --i) {
-			sink(array, i, len);
-		}
-
-		int index = len;
-		//排序
-		while (index > 1) {
-			swap(array, 1, index--);
-			sink(array, 1, index);
-		}
-		for (int i = 1; i < len + 1; ++i) {
-			nums[i - 1] = array[i];
+		int i = len - 1;
+		while(i > 0){
+			swap(nums, i--, 0);
+			shiftDown(nums, 0, i);
 		}
 		return nums;
 	}
 
-	public void sink(int[] nums, int index, int length) {
-		//下沉
-		while (2 * index <= length) {
-			// 获取子节点
-			int j = 2 * index;
-			//找出子节点中最大或最小的那个
-			if (j + 1 <= length && nums[j + 1] > nums[j]) {
-				j++;
+	private void shiftDown(int[] nums, int i, int end){
+		int tmp = nums[i];
+		while(2 * i + 1 <= end){
+			// 左节点
+			int child = 2 * i + 1;
+			// 比较左节点和右节点，右节点大的时候，返回右节点下标
+			if(child != end && nums[child + 1] > nums[child]){
+				child++;
 			}
-			// 交换操作，父节点下沉，与最大的孩子交换节点
-			if (nums[j] > nums[index]) {
-				swap(nums, j, index);
-			} else {
+			if(tmp < nums[child]) {
+				nums[i] = nums[child];
+				i = child;
+			}else{
 				break;
 			}
-			// 继续下沉
-			index = j;
 		}
+		nums[i] = tmp;
 	}
 
 	public void swap(int nums[], int i, int j) {
@@ -62,12 +51,32 @@ public class 堆排序 {
 	}
 
 	/**
-	 * 上浮建堆，我们可以用数组保存堆，并且可以通过 index/2 得到其父节点的值
+	 * 上浮构建堆
 	 */
+	public int[] sortArray1(int[] nums) {
+		for (int i = nums.length-1; i > 0; i--) {
+			buildMaxHeap(nums, i);
+			swap(nums, 0, i);
+		}
+		return nums;
+	}
+
+	public void buildMaxHeap(int[] arr, int length) {
+		for (int i = 0; i <= length; i++) {
+			swim(arr, i);
+		}
+	}
+
 	public void swim(int[] nums, int index) {
-		while (index > 1 && nums[index / 2] > nums[index]) {
+		while (index >= 1 && nums[index / 2] < nums[index]) {
 			swap(nums, index / 2, index);//交换
 			index = index / 2;
 		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{3,5,4,7,8,9,10,1,2,6};
+		堆排序 x = new 堆排序();
+		x.sortArray(arr);
 	}
 }

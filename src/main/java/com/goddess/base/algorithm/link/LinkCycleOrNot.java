@@ -22,5 +22,4 @@ public class LinkCycleOrNot {
 		}
 		return false;
 	}
-
 }

@@ -31,7 +31,7 @@ public class ReverseLink {
 	/**
 	 * 头插法
 	 */
-	public ListNode reverseList(ListNode head) {
+	public static ListNode reverseList(ListNode head) {
 		ListNode newHead = new ListNode(-1);
 		newHead.next = head;
 
@@ -82,7 +82,7 @@ public class ReverseLink {
 		head.next.next.next.next.next.next = new ListNode(7);
 		head.next.next.next.next.next.next.next = new ListNode(8);
 
-		System.out.println(reverseLink1(head));
+		System.out.println(reverseList(head));
 	}
 
 }

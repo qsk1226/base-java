@@ -12,7 +12,7 @@ package com.goddess.base.algorithm.link;
  **/
 public class LinkNodeShareNode {
 
-	public static ListNode xx(ListNode head1, ListNode head2) {
+	public static ListNode linkNodeShareNode(ListNode head1, ListNode head2) {
 
 		ListNode a = head1;
 		ListNode b = head2;
@@ -43,7 +43,7 @@ public class LinkNodeShareNode {
 		head2.next.next.next.next = new ListNode(51);
 		head2.next.next.next.next.next = n6;
 
-		System.out.println(xx(head, head2).val);
+		System.out.println(linkNodeShareNode(head, head2).val);
 
 	}
 

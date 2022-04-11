@@ -11,7 +11,7 @@ public class 爬楼梯 {
 		return f(n);
 	}
 
-	// 自底向上动态规划
+	// 自底向上动态规划,有多少种方法爬到楼顶，  1，2,3,5，8
 	public int f(int n) {
 		if (n == 1) return 1;
 
@@ -22,5 +22,20 @@ public class 爬楼梯 {
 			dp[i] = dp[i - 1] + dp[i - 2];
 		}
 		return dp[n - 1];
+	}
+
+	/**
+	 * 花费
+	 */
+	public int minCostClimbingStairs(int[] cost) {
+		int length = cost.length;
+		int[] dp = new int[cost.length];
+		// 题目中指定 length >= 2，直接赋值也不会产生越界问题
+		dp[0] = cost[0];
+		dp[1] = cost[1];
+		for (int i = 2; i < length; i++) {
+			dp[i] = Math.min(dp[i - 1], dp[i - 2]) + cost[i];
+		}
+		return Math.min(dp[length - 1], dp[length - 2]);
 	}
 }

@@ -12,13 +12,13 @@ import java.util.stream.IntStream;
  * @author qinshengke
  * @since 2021/4/24
  **/
-class TOPK_最小K个数 {
+public class TOPK_最小K个数 {
 	public static void main(String[] args) {
-		TOPK_最小K个数 xx = new TOPK_最小K个数();
-		xx.getLeastNumbers(new int[]{1,2,3}, 2);
+		int[] leastNumbers = getLeastNumbers(new int[]{1, 2, 3}, 2);
+		Arrays.stream(leastNumbers).forEach(System.out::println);
 	}
 
-	public int[] getLeastNumbers(int[] arr, int k) {
+	public static int[] getLeastNumbers(int[] arr, int k) {
 		if (k == 0 || arr.length == 0) {
 			return new int[0];
 		}
@@ -26,7 +26,10 @@ class TOPK_最小K个数 {
 		return quickSearch(arr, 0, arr.length - 1, k - 1);
 	}
 
-	private int[] quickSearch(int[] nums, int low, int high, int k) {
+	/**
+	 * 快速查寻
+	 */
+	private static int[] quickSearch(int[] nums, int low, int high, int k) {
 		// 每快排切分1次，找到排序后下标为j的元素，如果j恰好等于k就返回j以及j左边所有的数；
 		int index = partition(nums, low, high);
 		if (index == k) {
@@ -39,23 +42,17 @@ class TOPK_最小K个数 {
 	}
 
 	// 快排切分，返回下标j，使得比nums[j]小的数都在j的左边，比nums[j]大的数都在j的右边。
-	private int partition(int[] array, int low, int high) {
+	private static int partition(int[] array, int low, int high) {
 		int jizhun = array[low];
 		int index = low + 1;
 		if (low < high) {
 			for (int i = index; i <= high; i++) {
 				if (array[i] < jizhun) {
-					int tmp = array[i];
-					array[i] = array[index];
-					array[index] = tmp;
+					swap(array, i, index);
 					index++;
 				}
 			}
-
-			int tmp = array[low];
-			array[low] = array[index - 1];
-			array[index - 1] = tmp;
-
+			swap(array,index - 1, low);
 		}
 		return index;
 	}
@@ -123,7 +120,7 @@ class TOPK_最小K个数 {
 		}
 	}
 
-	public void swap(int[] a, int i, int j) {
+	private static void swap(int[] a, int i, int j) {
 		int temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;

@@ -10,9 +10,9 @@ public class BinarySearch {
 	/**
 	 * n = 5, v = 4,  a = [1,2,4,4,4,4,5]
 	 */
-	public static int upper(int n, int v, int[] a) {
+	public static int upper(int length, int v, int[] a) {
 		int low = 0;
-		int high = n;
+		int high = length;
 		while (low < high) {
 			int mid = (low + high) / 2;
 			if (v >= a[mid]) {
@@ -26,7 +26,7 @@ public class BinarySearch {
 				high = mid - 1;
 			}
 		}
-		return n + 1;
+		return high + 1;
 	}
 
 	public static void main(String[] args) {

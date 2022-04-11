@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class 冒泡排序 {
 
 	/**
-	 * 数组 a 前 n 位进行排序
+	 * 数组 a 前 n 位进行排序 O(N^2)
 	 */
 	public static void bubbleSort(int[] a, int n) {
 		int i, j;

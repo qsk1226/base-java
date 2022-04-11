@@ -1,6 +1,5 @@
 package com.goddess.base.algorithm.link;
 
-import java.util.List;
 import java.util.Stack;
 
 /**

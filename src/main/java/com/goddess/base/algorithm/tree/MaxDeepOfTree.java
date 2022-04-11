@@ -23,18 +23,18 @@ public class MaxDeepOfTree {
 		queue.add(root);
 		int level = 1;
 		while (!queue.isEmpty()) {
-			TreeNode tmp = queue.poll();
+			TreeNode node = queue.poll();
 
-			if (tmp.left != null) {
-				perLast = tmp.left;
-				queue.add(tmp.left);
+			if (node.left != null) {
+				perLast = node.left;
+				queue.add(node.left);
 			}
 
-			if (tmp.right != null) {
-				perLast = tmp.right;
-				queue.add(tmp.right);
+			if (node.right != null) {
+				perLast = node.right;
+				queue.add(node.right);
 			}
-			if (tmp == curLast && !queue.isEmpty()) {
+			if (node == curLast && !queue.isEmpty()) {
 				level++;
 				curLast = perLast;
 			}

@@ -12,7 +12,7 @@ public class 查找数组中数字出现超过半数的数字 {
 		int x = 0, votes = 0;
 		for(int num : nums){
 			if(votes == 0) x = num;
-			votes += num == x ? 1 : -1;
+			votes = (num == x ? 1 : -1) + votes;
 		}
 		return x;
 	}

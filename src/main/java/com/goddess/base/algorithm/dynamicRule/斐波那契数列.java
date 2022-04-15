@@ -37,9 +37,12 @@ public class 斐波那契数列 {
 		return tmp[n];
 	}
 
-
+	/**
+	 * 640540120
+	 * 490189494
+	 */
 	public static void main(String[] args) {
-		System.out.println(fib(10000000));
+		System.out.println(fib(6));
 	}
 
 }

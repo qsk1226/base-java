@@ -46,15 +46,9 @@ public class ReverseLink {
 		}
 		return newHead.next;
 	}
-
-	public static String reverseLeftWords(String s, int n) {
-		String moved = s.substring(0, n);
-		String xx = s.substring(n, s.length());
-
-		return xx + moved;
-	}
-
-
+	/**
+	 * dfs
+	 */
 	public static ListNode reverseLink1(ListNode head) {
 		Stack<ListNode> stack = new Stack<>();
 		while (head != null) {
@@ -71,8 +65,6 @@ public class ReverseLink {
 	}
 
 	public static void main(String[] args) {
-		reverseLeftWords("abcdefg", 2);
-
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);
 		head.next.next = new ListNode(3);

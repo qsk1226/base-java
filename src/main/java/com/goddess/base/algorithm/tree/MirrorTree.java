@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 输出树的镜像
+ * 广度优先算法，输出树的镜像
  *
  * @author qinshengke
  * @since 2021/4/16
@@ -15,6 +15,9 @@ public class MirrorTree {
 		return bfs(root);
 	}
 
+	/**
+	 * 广度优先算法
+	 */
 	public TreeNode bfs(TreeNode root) {
 		if (root == null) return null;
 		TreeNode newRoot = root;

@@ -11,37 +11,32 @@ import java.util.Arrays;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] arr = new int[]{0,11, 1, 33, 2, 9, 13, 44, 5};
+		int[] arr = new int[]{0, 11, 1, 33, 2, 9, 13, 44, 5};
 		int[] xx = quickSort(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(xx));
 	}
 
-	public static int[] quickSort(int[] array,int low,int high) {
-		int pivot = low + (int) (Math.random() * (high - low + 1));
-		swap(array, pivot, low);
-		int jizhun = array[low];
-		int index = low + 1;
+	public static int[] quickSort(int[] array, int low, int high) {
+
 		if (low < high) {
+			int index = low + 1;
+			int jizhun = array[low];
 			for (int i = index; i <= high; i++) {
 				if (array[i] < jizhun) {
-					int tmp = array[i];
-					array[i] = array[index];
-					array[index] = tmp;
-
+					swap(array, i, index);
 					index++;
 				}
 			}
 
-			int tmp = array[low];
-			array[low] = array[index - 1];
-			array[index - 1] = tmp;
+			swap(array, low, index - 1);
 
-			quickSort(array, low, index-1);
+			quickSort(array, low, index - 1);
 			quickSort(array, index, high);
 		}
 		return array;
 	}
-	private static void swap(int[] nums, int i, int j){
+
+	private static void swap(int[] nums, int i, int j) {
 		int tmp = nums[i];
 		nums[i] = nums[j];
 		nums[j] = tmp;

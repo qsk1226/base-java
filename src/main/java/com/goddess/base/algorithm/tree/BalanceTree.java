@@ -1,8 +1,5 @@
 package com.goddess.base.algorithm.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * 判断一颗树是否为平衡二叉树
  *

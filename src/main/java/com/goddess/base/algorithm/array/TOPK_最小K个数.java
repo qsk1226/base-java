@@ -37,8 +37,9 @@ public class TOPK_最小K个数 {
 			IntStream.rangeClosed(0, k).forEach(m -> res[m] = nums[m]);
 			return res;
 		}
+
 		// 否则根据下标j与k的大小关系来决定继续切分左段还是右段。
-		return index > k ? quickSearch(nums, low, index - 1, k) : quickSearch(nums, index + 1, high, k);
+		return index > k ? quickSearch(nums, low, index-1 , k) : quickSearch(nums, index +1, high, k);
 	}
 
 	// 快排切分，返回下标j，使得比nums[j]小的数都在j的左边，比nums[j]大的数都在j的右边。

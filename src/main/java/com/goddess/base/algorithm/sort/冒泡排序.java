@@ -27,8 +27,7 @@ public class 冒泡排序 {
 				//前面的数字大于后面的数字就交换
 				if (a[j - 1] > a[j]) {
 					// 交换 a[j-1]和 a[j]
-					int temp;
-					temp = a[j - 1];
+					int temp = a[j - 1];
 					a[j - 1] = a[j];
 					a[j] = temp;
 				}
@@ -39,7 +38,8 @@ public class 冒泡排序 {
 	}
 
 	public static void main(String[] args) {
-		//sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
+		int[] nums = new int[]{2, 3, 1, 5, 72, 22, 33, 11};
+		bubbleSort(nums, nums.length);
 	}
 }
 

@@ -32,7 +32,7 @@ public class 斐波那契数列 {
 		tmp[0] = BigInteger.ZERO;
 		tmp[1] = BigInteger.ONE;
 		for (int i = 2; i <= n; i++) {
-			tmp[i] = tmp[i - 1].add(tmp[i - 2]);
+			tmp[i] = tmp[i - 1].add(tmp[i - 2]).mod(BigInteger.valueOf(1000000007));
 		}
 		return tmp[n];
 	}
@@ -43,6 +43,7 @@ public class 斐波那契数列 {
 	 */
 	public static void main(String[] args) {
 		System.out.println(fib(6));
+		System.out.println(f(6));
 	}
 
 }

@@ -27,6 +27,25 @@ public class RemoveLastKthNode {
 		return head;
 	}
 
+	public ListNode removeLastKthNode1(ListNode head, int k) {
+		if (k <= 0) return null;
+		ListNode slow = head;
+		ListNode fast = head;
+		while (k != 0 && fast != null) {
+			fast = fast.next;
+			k--;
+		}
+
+		ListNode pre = head;
+		while(fast != null) {
+			pre = slow;
+			fast = fast.next;
+			slow = slow.next;
+		}
+
+		pre.next = slow.next;
+		return head;
+	}
 
 	public static void main(String[] args) {
 		ListNode listNode = new ListNode(1);
@@ -35,7 +54,7 @@ public class RemoveLastKthNode {
 		listNode.next.next.next = new ListNode(4);
 		listNode.next.next.next.next = new ListNode(5);
 		RemoveLastKthNode removeLastKthNode = new RemoveLastKthNode();
-		ListNode listNode1 = removeLastKthNode.removeLastKthNode(listNode, 4);
-		System.out.println(listNode1.val);
+		ListNode listNode1 = removeLastKthNode.removeLastKthNode1(listNode, 4);
+		System.out.println(listNode1);
 	}
 }

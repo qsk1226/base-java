@@ -1,5 +1,8 @@
 package com.goddess.base.algorithm.link;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -9,42 +12,31 @@ import java.util.Stack;
  * @since 2021/3/26
  **/
 public class LinkReversedPerK {
-	/**
-	 * 链表每 K 个元素进行反转
-	 */
-	public ListNode reverseByStack(ListNode head, int k) {
-		if (k < 2) return head;
-		Stack<ListNode> stack = new Stack<>();
-		ListNode newHead = head;
-		ListNode cur = head;
-		ListNode pre = null;
-		ListNode next = null;
-		while (cur != null) {
-			next = cur.next;
-			stack.push(cur);
-			if (stack.size() == k) {
-				pre = reverse(stack, pre, next);
-				newHead = newHead == head ? cur : newHead;
-			}
-			cur = next;
+
+	public static ListNode reversePerK(ListNode head, int k) {
+		ListNode newHead = new ListNode(0);
+		newHead.next = head;
+		ListNode pre = newHead;
+		ListNode end = newHead;
+
+		while(end.next != null) {
+			for(int i = 1; i <= k && end != null; i++) end = end.next;
+			if (end == null) break;
+
+			ListNode start = pre.next;
+			ListNode next = end.next;
+			end.next = null;
+
+			pre.next = reverse(start);
+			start.next = next;
+
+			pre = start;
+			end = start;
 		}
-		return newHead;
+		return newHead.next;
 	}
 
-	private ListNode reverse(Stack<ListNode> stack, ListNode left, ListNode right) {
-		ListNode cur = stack.pop();
-		if (left != null) {
-			left.next = cur;
-		}
-		ListNode next = null;
-		while (!stack.isEmpty()) {
-			next = stack.pop();
-			cur.next = next;
-			cur = next;
-		}
-		cur.next = right;
-		return cur;
-	}
+
 
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
@@ -56,51 +48,36 @@ public class LinkReversedPerK {
 		head.next.next.next.next.next.next = new ListNode(7);
 		head.next.next.next.next.next.next.next = new ListNode(8);
 
-		LinkReversedPerK p = new LinkReversedPerK();
-		ListNode listNode = p.reverseKNodes(head, 3);
-
-		while (listNode != null) {
-			System.out.print(listNode.val + "--->");
-			listNode = listNode.next;
+		ListNode listNode1 = reversePerK(head, 3);
+		while (listNode1 != null) {
+			System.out.print(listNode1.val + "--->");
+			listNode1 = listNode1.next;
 		}
-
 	}
 
-
-	//每k个节点为一组的逆转
-	public ListNode reverseKNodes(ListNode head, int k) {
-		if (head == null || head.next == null) {
-			return head;
-		}
-		ListNode cur = head;
-		for (int i = 1; cur != null && i < k; i++) {
-			cur = cur.next;
-		}
-		//判断是否能组成一组。
-		if (cur == null) {
-			return head;
-		}
-		//temp指向剩余的链表
-		ListNode temp = cur.next;
-		cur.next = null;
-		//把k个节点进行反转
-		ListNode newHead = reverse(head);
-		//把之后的部分链表进行每K个节点逆转转
-		ListNode newTemp = reverseKNodes(temp, k);
-		//把两部分节点连接起来
-		return newHead;
-	}
-
-	//单链表逆序
-	public ListNode reverse(ListNode head) {
+	//递归方式实现单链表的反转
+	public static ListNode reverseByDG(ListNode head) {
 		if (head == null || head.next == null) {
 			return head;
 		}
 		ListNode newHead = reverse(head.next);
-		head.next.next =  head;
+		head.next.next = head;
 		head.next = null;
 		return newHead;
 	}
 
+
+	public static ListNode reverse(ListNode head) {
+		ListNode pre = null;
+		ListNode curr = head;
+		while (curr != null) {
+			ListNode next = curr.next;
+			curr.next = pre;
+
+			pre = curr;
+			curr = next;
+		}
+		return pre;
+	}
 
 }

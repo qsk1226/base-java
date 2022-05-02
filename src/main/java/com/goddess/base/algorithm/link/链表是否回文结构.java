@@ -1,4 +1,4 @@
-package com.goddess.base.algorithm.str;
+package com.goddess.base.algorithm.link;
 
 import com.goddess.base.algorithm.link.ListNode;
 

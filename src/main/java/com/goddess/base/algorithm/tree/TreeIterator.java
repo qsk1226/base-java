@@ -14,10 +14,10 @@ public class TreeIterator {
 	static TreeNode root = new TreeNode(4);
 
 	static {
-		insert(root, 2);
+		insert(root, 1);
 		insert(root, 3);
-		insert(root, 5);
 		insert(root, 6);
+		insert(root, 9);
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class TreeIterator {
 	 */
 	public static void dfsMiddle(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();
-		TreeNode cur = TreeIterator.root;
+		TreeNode cur = root;
 		while (cur != null || !stack.empty()) {
 			while (cur != null) {
 				stack.push(cur);

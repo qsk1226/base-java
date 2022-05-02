@@ -1,11 +1,14 @@
 package com.goddess.base.algorithm.tree;
 
+import lombok.Data;
+
 /**
  * 属性节点
  *
  * @author qinshengke
  * @since 2021/3/15
  **/
+@Data
 public class TreeNode {
 	protected Integer val;
 	protected TreeNode left;
@@ -15,27 +18,9 @@ public class TreeNode {
 		this.val = value;
 	}
 
-	public Integer getVal() {
-		return val;
-	}
-
-	public void setVal(Integer val) {
+	public TreeNode(Integer val, TreeNode left, TreeNode right) {
 		this.val = val;
-	}
-
-	public TreeNode getLeft() {
-		return left;
-	}
-
-	public void setLeft(TreeNode left) {
 		this.left = left;
-	}
-
-	public TreeNode getRight() {
-		return right;
-	}
-
-	public void setRight(TreeNode right) {
 		this.right = right;
 	}
 }

@@ -4,7 +4,12 @@ import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Random;
-
+/**
+ * 生成全国人民姓名
+ *
+ * @author qinshengke
+ * @since 2022/4/23
+ **/
 public class Test {
 	public static void main(String[] args) throws Exception {
 		final String fileName = "/Users/qinshengke/age1.txt";

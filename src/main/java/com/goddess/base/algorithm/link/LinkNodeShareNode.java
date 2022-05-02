@@ -34,16 +34,19 @@ public class LinkNodeShareNode {
 		head.next.next = new ListNode(3);
 		head.next.next.next = new ListNode(4);
 		head.next.next.next.next = new ListNode(5);
-		head.next.next.next.next.next = n6;
+		//head.next.next.next.next.next = n6;
 
 		ListNode head2 = new ListNode(11);
 		head2.next = new ListNode(21);
 		head2.next.next = new ListNode(31);
 		head2.next.next.next = new ListNode(41);
 		head2.next.next.next.next = new ListNode(51);
-		head2.next.next.next.next.next = n6;
+		head2.next.next.next.next.next = new ListNode(61);
+		//head2.next.next.next.next.next = n6;
 
-		System.out.println(linkNodeShareNode(head, head2).val);
+		ListNode x = linkNodeShareNode(head, head2);
+		if (x!=null)
+		System.out.println(x.val);
 
 	}
 

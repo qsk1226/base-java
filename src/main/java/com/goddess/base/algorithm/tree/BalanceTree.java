@@ -1,7 +1,11 @@
 package com.goddess.base.algorithm.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 判断一颗树是否为平衡二叉树
+ * 平衡二叉树：一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
  *
  * @author qinshengke
  * @since 2021/3/28
@@ -34,36 +38,35 @@ public class BalanceTree {
 		}
 		return Math.max(lh, rh);
 	}
+
 	/**
 	 * 判断一个数是否是平衡树
 	 */
 	boolean result = true;
+
 	public int dfs(TreeNode root, int level) {
-		if (root == null) return  level;
+		if (root == null) return level;
 
-		int ld = dfs(root.left, level+1);
-		if (!result) return level;
-		System.out.println(root);
-		int rd = dfs(root.right, level+1);
-		if (!result) return level;
-
+		int ld = dfs(root.left, level + 1);
+		int rd = dfs(root.right, level + 1);
 		if (Math.abs(rd - ld) > 1) {
 			result = false;
 		}
 
-		return Math.max(ld,rd);
+		return Math.max(ld, rd);
 	}
 
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(4);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(5);
-		root.left.left=new TreeNode(1);
+		root.left.left = new TreeNode(1);
 		root.left.right = new TreeNode(2);
 		root.left.left.left = new TreeNode(0);
 
 		BalanceTree balanceTree = new BalanceTree();
-		System.out.println(balanceTree.dfs(root,1));
+		System.out.println(balanceTree.dfs(root, 1));
+		System.out.println(balanceTree.isBalance(root));
 		System.out.println(balanceTree.result);
 
 	}

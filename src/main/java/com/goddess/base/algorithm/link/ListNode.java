@@ -14,7 +14,9 @@ public class ListNode {
 		this.val = val;
 	}
 
-	@Override
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+
+    @Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		ListNode tmp = this;
@@ -25,4 +27,5 @@ public class ListNode {
 
 		return sb.toString();
 	}
+
 }

@@ -10,6 +10,16 @@ import java.util.List;
  * @since 2021/4/19
  **/
 public class GenerateKuohu {
+	public static void main(String[] args) {
+		GenerateKuohu generateKuohu = new GenerateKuohu();
+		List<String> strings = generateKuohu.generateParenthesis(2);
+		for (String string : strings) {
+			System.out.print(string);
+		}
+		System.out.println("");
+		System.out.println(strings.size());
+	}
+
 	public List<String> generateParenthesis(int n) {
 		List<String> res = new ArrayList<>();
 		dfs(res, n, n, "");
@@ -17,8 +27,9 @@ public class GenerateKuohu {
 	}
 
 	private void dfs(List<String> res, int left, int right, String curStr) {
-		if (left == 0 && right == 0) { // 左右括号都不剩余了，说明找到了有效的括号
-			res.add(curStr);
+		// 左右括号都不剩余了，说明找到了有效的括号
+		if (left == 0 && right == 0) {
+			res.add(curStr + "  ");
 			return;
 		}
 		//左括号只有剩余的时候才可以选，如果左括号的数量已经选完了，是不能再选左括号了。

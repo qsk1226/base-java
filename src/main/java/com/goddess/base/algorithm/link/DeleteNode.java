@@ -7,7 +7,7 @@ package com.goddess.base.algorithm.link;
  * @since 2021/4/23
  **/
 public class DeleteNode {
-	public ListNode deleteNode(ListNode head, int val) {
+	public static ListNode deleteNode(ListNode head, int val) {
 		if (head == null) return null;
 		if (head.val == val) {
 			return head.next;
@@ -15,12 +15,18 @@ public class DeleteNode {
 		ListNode next = head.next;
 		ListNode pre = head;
 
-		while (next != null && next.val != val) {
-			pre = next;
-			next = next.next;
-		}
-		if (next != null) {
-			pre.next = next.next;
+		ListNode node = head;
+		while(node != null) {
+			while (next != null && next.val != val) {
+				pre = next;
+				next = next.next;
+			}
+			if (next != null) {
+				pre.next = next.next;
+				next = next.next;
+			}
+
+			node = pre.next;
 		}
 		return head;
 	}
@@ -52,11 +58,11 @@ public class DeleteNode {
 		head.next = new ListNode(2);
 		head.next.next = new ListNode(3);
 		head.next.next.next = new ListNode(4);
-		head.next.next.next.next = new ListNode(5);
+		head.next.next.next.next = new ListNode(4);
 		head.next.next.next.next.next = new ListNode(6);
 		head.next.next.next.next.next.next = new ListNode(7);
 		head.next.next.next.next.next.next.next = new ListNode(8);
 
-		System.out.println(deleteNode1(head, 4));
+		System.out.println(deleteNode(head, 4));
 	}
 }

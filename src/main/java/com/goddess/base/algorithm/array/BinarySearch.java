@@ -7,30 +7,32 @@ package com.goddess.base.algorithm.array;
  * @since 2021/4/20
  **/
 public class BinarySearch {
-	/**
-	 * n = 5, v = 4,  a = [1,2,4,4,4,4,5]
-	 */
-	public static int upper(int length, int v, int[] a) {
-		int low = 0;
-		int high = length;
-		while (low < high) {
-			int mid = (low + high) / 2;
-			if (v >= a[mid]) {
-				low = mid + 1;
-				int tmp = mid;
-				while(a[tmp] >= v) {
-					tmp--;
-				}
-				return tmp+2;
-			} else if (v < a[mid]) {
-				high = mid - 1;
-			}
-		}
-		return high + 1;
-	}
 
 	public static void main(String[] args) {
-		int[] a = new int[]{1,2,4,4,4,4,5};
-		System.out.println(upper(7,4, a));
+		int[] a = new int[]{1,2,3,4,4,4,4,4,5,6,7,8,9,10,11,12,13,14};
+		System.out.println(tmpUpper(a,5));
 	}
+
+	public static int tmpUpper(int[] nums, int value) {
+		int low = 0;
+		int tmp = 0;
+		int high = nums.length;
+		while (low < high) {
+			int mid = (low + high)/2;
+			if (nums[mid] < value) {
+				low = mid + 1 ;
+			} else {
+				high = mid - 1;
+				tmp = mid;
+				while (nums[tmp] >= value) {
+					tmp--;
+				}
+				if (tmp != mid) {
+					return tmp + 2;
+				}
+			}
+		}
+		return tmp + 1;
+	}
+
 }

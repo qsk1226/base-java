@@ -3,9 +3,16 @@ package com.goddess.base.blocking;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 阻塞队列
+ *
+ * @author qinshengke
+ * @since 2022/5/13
+ **/
 public class ConditionBlockingQueue<E> implements CustomBlockingQueue<E> {
 	//默认的队列容量
 	private static final int DEFAULT_CAPTITY = 10;
+
 	private final ReentrantLock lock = new ReentrantLock();
 	private final Condition notFull = lock.newCondition();
 	private final Condition notEmpty = lock.newCondition();
@@ -32,6 +39,7 @@ public class ConditionBlockingQueue<E> implements CustomBlockingQueue<E> {
 		head = tail = 0;
 		elements = (E[]) new Object[captity];
 	}
+
 	@Override
 	public void put(E e) {
 		lock.lock();

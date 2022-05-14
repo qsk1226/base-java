@@ -6,7 +6,7 @@ package com.goddess.base.thread.ThreadLocalDemo;
  * @author qinshengke
  * @since 2020/4/10 22:15
  **/
-public class ThreadLocalContext {
+public final class ThreadLocalContext {
 
 	private static final ThreadLocal<Object> UNKNOWN_THREAD_LOCAL = new ThreadLocal<>();
 

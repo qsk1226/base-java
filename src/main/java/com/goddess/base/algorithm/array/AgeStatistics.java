@@ -14,13 +14,15 @@ import java.util.Arrays;
  * @since 2022/4/10
  **/
 public class AgeStatistics {
-	// 三岁的有多少人
+
+	/**
+	 * 三岁的有多少人
+	 */
 	public static void main(String[] args) {
 		String fileName = "/Users/qinshengke/age1.txt";
 		int[] statistic = statistic(fileName);
-
 		for (int i = 0; i < statistic.length; i++) {
-			System.out.println("年龄 i ，"+ i +"人数："+statistic[i]);
+			System.out.println("年龄 i ，" + i + "人数：" + statistic[i]);
 		}
 		System.out.println(statistic[3]);
 	}

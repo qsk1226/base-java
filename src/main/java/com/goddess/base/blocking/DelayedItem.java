@@ -11,12 +11,18 @@ import java.util.concurrent.TimeUnit;
  * @since 2020/6/22 21:57
  **/
 public class DelayedItem<T> implements Delayed {
-	//到期时间,但传入的数值代表过期的时长，传入单位毫秒
+	/**
+	 * 到期时间,但传入的数值代表过期的时长，传入单位毫秒
+	 */
 	private long activeTime;
-	//业务数据，泛型
+	/**
+	 * 业务数据，泛型
+	 */
 	private T data;
 
-	//传入过期时长,单位秒，内部转换
+	/**
+	 * 传入过期时长,单位秒，内部转换
+	 */
 	public DelayedItem(long expirationTime, T data) {
 		this.activeTime = expirationTime * 1000 + System.currentTimeMillis();
 		this.data = data;
@@ -30,7 +36,7 @@ public class DelayedItem<T> implements Delayed {
 		return data;
 	}
 
-	/*
+	/**
 	 * 这个方法返回到激活日期的剩余时间，时间单位由单位参数指定。
 	 */
 	@Override

@@ -1,6 +1,7 @@
 package com.goddess.base.algorithm.tree;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -14,6 +15,9 @@ public class TreeIterator {
 	static TreeNode root = new TreeNode(4);
 
 	static {
+		insert(root, -1);
+		insert(root, -2);
+		insert(root, -3);
 		insert(root, 1);
 		insert(root, 3);
 		insert(root, 6);
@@ -93,7 +97,7 @@ public class TreeIterator {
 	/**
 	 * 深度优先算法实现的先序遍历
 	 */
-	public static void dfs(TreeNode root) {
+	public static void dfsPre(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();
 		stack.push(root);
 
@@ -152,6 +156,30 @@ public class TreeIterator {
 		}
 	}
 
+	public static List<Integer> postorderTraversal(TreeNode root) {
+		Stack<TreeNode> stack = new Stack<>();
+		List<Integer> list = new LinkedList<>();
+		//TreeNode lastVisited = null;
+		while(!stack.isEmpty() || root != null) {
+			if (root != null) {
+				stack.push(root);
+				root = root.left;
+			} else {
+				TreeNode node = stack.peek();
+				//if (node.right != null && lastVisited != node.right) {
+				if (node.right != null) {
+					root = node.right;
+				} else {
+					list.add(node.val);
+					System.out.print(node.val+"-->");
+					//lastVisited = stack.pop();
+					stack.pop();
+				}
+			}
+		}
+		return list;
+	}
+
 	public static void main(String[] args) {
 		System.out.print("前序遍历:");
 		pre(root);
@@ -170,7 +198,7 @@ public class TreeIterator {
 		System.out.println("");
 
 		System.out.println("深度优先算法前序遍历");
-		dfs(root);
+		dfsPre(root);
 		System.out.println("");
 
 		System.out.println("深度优先算法中序遍历");
@@ -179,6 +207,11 @@ public class TreeIterator {
 
 		System.out.println("深度优先算法后续遍历");
 		dfsAfter(root);
+		System.out.println("");
+
+
+		System.out.println("深度优先算法后续遍历");
+		postorderTraversal(root);
 		System.out.println("");
 	}
 }

@@ -14,7 +14,9 @@ public class DBPoolNoUseless {
 
 	private final static int POOL_SIZE = 10;
 	private final Semaphore useful;
-	//存放数据库连接的容器
+	/**
+	 * 存放数据库连接的容器
+	 */
 	private static LinkedList<Connection> pool = new LinkedList<Connection>();
 
 	//初始化池

@@ -1,9 +1,12 @@
 package com.goddess.base.annotation;
 
+import java.io.InputStream;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * .
@@ -23,12 +26,7 @@ public class AnnotationTest {
 		Method[] methods = bleachTestClass.getMethods();
 		Method sayHello = bleachTestClass.getMethod("sayHello", String.class);
 
-
-
 		Field[] declaredFields = bleachTestClass.getDeclaredFields();
-
-
-
 
 	}
 

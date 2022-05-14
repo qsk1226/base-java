@@ -2,13 +2,18 @@ package com.goddess.base.blocking;
 
 import java.util.LinkedList;
 import java.util.List;
-
-public class WaiteNotifyBlockingQueue<E> implements CustomBlockingQueue<E> {
+/**
+ * 同步的阻塞队列
+ *
+ * @author qinshengke
+ * @since 2022/5/13
+ **/
+public class SynchronizedBlockingQueue<E> implements CustomBlockingQueue<E> {
 
 	private final List<E> queue = new LinkedList<>();
 	private int limit = 10;
 
-	public WaiteNotifyBlockingQueue(int limit) {
+	public SynchronizedBlockingQueue(int limit) {
 		this.limit = limit;
 	}
 

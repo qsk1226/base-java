@@ -1,5 +1,7 @@
 package com.goddess.base.algorithm.sort;
 
+import com.goddess.base.algorithm.array.SortTestHelper;
+
 import java.util.Arrays;
 
 /**
@@ -12,18 +14,25 @@ import java.util.Arrays;
  * @since 2021/3/3
  **/
 public class InsertSort {
+	public static void main(String[] args) {
+
+		int[] arr = SortTestHelper.generateRandomArray(200, 100);
+		sort(arr);
+	}
 
 	//核心代码---开始
 	public static void sort(int[] arr) {
-
+		System.out.println(Arrays.toString(arr));
 		for (int i = 0; i < arr.length; i++) {
 			// 寻找元素 arr[i] 合适的插入位置
 			for (int j = i; j > 0; j--)
-				if (arr[j] < arr[j - 1])
+				if (arr[j] < arr[j - 1]) {
 					swap(arr, j, j - 1);
-				else
+				} else {
 					break;
+				}
 		}
+		System.out.println(Arrays.toString(arr));
 	}
 
 	private static void swap(int[] nums, int i, int j) {

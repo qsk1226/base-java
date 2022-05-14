@@ -1,5 +1,9 @@
 package com.goddess.base.algorithm.sort;
 
+import com.goddess.base.algorithm.array.SortTestHelper;
+
+import java.util.Arrays;
+
 /**
  * 希尔排序
  *
@@ -7,6 +11,12 @@ package com.goddess.base.algorithm.sort;
  * @since 2021/3/3
  **/
 public class 希尔排序 {
+
+	public static void main(String[] args) {
+		int[] ints = SortTestHelper.generateRandomArray(20, 30);
+		shellSort(ints);
+	}
+
 	public static void shellSort(int[] arr) {
 		int length = arr.length;
 		int temp;
@@ -22,5 +32,6 @@ public class 希尔排序 {
 				arr[j + step] = temp;
 			}
 		}
+		System.out.println(Arrays.toString(arr));
 	}
 }

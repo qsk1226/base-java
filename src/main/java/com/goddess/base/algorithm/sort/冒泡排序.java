@@ -1,5 +1,7 @@
 package com.goddess.base.algorithm.sort;
 
+import com.goddess.base.algorithm.array.SortTestHelper;
+
 import java.util.Arrays;
 
 /**
@@ -38,8 +40,8 @@ public class 冒泡排序 {
 	}
 
 	public static void main(String[] args) {
-		int[] nums = new int[]{2, 3, 1, 5, 72, 22, 33, 11};
+		int[] nums = SortTestHelper.generateRandomArray(10, 30);
 		bubbleSort(nums, nums.length);
 	}
-}
 
+}

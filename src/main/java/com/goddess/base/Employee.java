@@ -16,17 +16,15 @@ public class Employee implements Cloneable, Serializable {
 	private int salary;// 该雇员薪资
 	private String origin;// 该雇员信息的来源
 
+	private Object object;
+
+	private int[] xx;
+
+	private Object[] oo;
+
 	public Employee(String id) {
 		this.id = id;
 		System.out.println("Employee Constructor Called...");
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	@Override

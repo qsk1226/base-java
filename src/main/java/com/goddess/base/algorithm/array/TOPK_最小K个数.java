@@ -15,51 +15,36 @@ import java.util.stream.IntStream;
 public class TOPK_最小K个数 {
 
 	public static void main(String[] args) {
-		int[] leastNumbers = getLeastNumbers(new int[]{1, 2, 3}, 2);
+		int[] arr = new int[]{0, 11, 1, 33, 2, 9, 13, 44, 5};
+		int[] leastNumbers = getLeastNumbers(arr, 2);
 		Arrays.stream(leastNumbers).forEach(System.out::println);
 	}
 
 	public static int[] getLeastNumbers(int[] arr, int k) {
-		if (k == 0 || arr.length == 0) {
-			return new int[0];
-		}
+
 		// 最后一个参数表示我们要找的是下标为 k-1 的数
-		return quickSearch(arr, 0, arr.length - 1, k - 1);
+		quickSearch(arr, 0, arr.length - 1);
+		return Arrays.copyOf(arr, k);
 	}
 
 	/**
 	 * 快速查寻
 	 */
-	private static int[] quickSearch(int[] nums, int low, int high, int k) {
-		// 每快排切分1次，找到排序后下标为j的元素，如果j恰好等于k就返回j以及j左边所有的数；
-		int index = partition(nums, low, high);
-		if (index == k) {
-			int[] res = new int[k + 1];
-			IntStream.rangeClosed(0, k).forEach(m -> res[m] = nums[m]);
-			return res;
-		}
+	private static void quickSearch(int[] nums, int low, int high) {
+		if (low > high) return;
+		int i = low, j = high;
 
-		// 否则根据下标j与k的大小关系来决定继续切分左段还是右段。
-		return index > k ? quickSearch(nums, low, index - 1, k) : quickSearch(nums, index + 1, high, k);
+		while (i < j) {
+			while (i < j && nums[j] >= nums[low]) j--;
+			while (i < j && nums[i] <= nums[low]) i++;
+			swap(nums, i, j);
+		}
+		swap(nums, i, low);
+		quickSearch(nums, low, i - 1);
+		quickSearch(nums, i + 1, high);
+
 	}
 
-	/**
-	 * 快排切分，返回下标j，使得比nums[j]小的数都在j的左边，比nums[j]大的数都在j的右边。
-	 */
-	private static int partition(int[] array, int low, int high) {
-		int jizhun = array[low];
-		int index = low + 1;
-		if (low < high) {
-			for (int i = index; i <= high; i++) {
-				if (array[i] < jizhun) {
-					swap(array, i, index);
-					index++;
-				}
-			}
-			swap(array, index - 1, low);
-		}
-		return index;
-	}
 
 	/**
 	 * ===========================================================

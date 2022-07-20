@@ -23,7 +23,6 @@ public class 反转left到right之间的链表元素 {
 			pre = pre.next;
 			cur = cur.next;
 		}
-
 		// 头插法，头就是 cur
 		while(cur!= null && count++ <= right && cur.next != null) {
 

@@ -12,11 +12,12 @@ import java.util.Arrays;
  * @author qinshengke
  * @since 2021/3/3
  **/
-public class 选择排序 {
+
+public class SelectSort {
 
 	public static void main(String[] args) {
-		选择排序 选择排序 = new 选择排序();
-		选择排序.sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
+		SelectSort SelectSort = new SelectSort();
+		SelectSort.sort(new int[]{2, 3, 1, 5, 72, 22, 33, 11});
 	}
 
 	public int[] sort(int[] array) {

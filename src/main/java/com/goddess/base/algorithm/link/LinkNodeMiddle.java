@@ -13,7 +13,7 @@ public class LinkNodeMiddle {
 
 		ListNode pre = head;
 		ListNode cur = head;
-		while (cur.next != null && cur.next.next != null) {
+		while (cur != null && cur.next != null) {
 			pre = pre.next;
 			cur = cur.next.next;
 			middle ++;
@@ -27,10 +27,12 @@ public class LinkNodeMiddle {
 		head.next = new ListNode(2);
 		head.next.next = new ListNode(3);
 		head.next.next.next = new ListNode(4);
+
 		head.next.next.next.next = new ListNode(5);
 		head.next.next.next.next.next = new ListNode(6);
 		head.next.next.next.next.next.next = new ListNode(7);
-		head.next.next.next.next.next.next.next = new ListNode(8);
+		//head.next.next.next.next.next.next.next = new ListNode(8);
+		//head.next.next.next.next.next.next.next.next = new ListNode(9);
 		LinkNodeMiddle p = new LinkNodeMiddle();
 		System.out.println(p.getMiddle(head));
 

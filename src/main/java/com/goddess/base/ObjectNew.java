@@ -25,13 +25,12 @@ public class ObjectNew {
 		System.out.println(aClass);
 
 
-		//Employee emp2 = (Employee) Class.forName("com.goddess.base.Employee").newInstance();
+		// Employee emp2 = (Employee) Class.forName("com.goddess.base.Employee").newInstance();
 		// Or we can simply do this
-		// Employee emp2 = Employee.class.newInstance();
-		//emp2.setName("Rishi");
-		//System.out.println("emp2--" + emp2 + ", hashcode : " + emp2.hashCode());
+		 Employee emp2 = Employee.class.newInstance();
+		emp2.setName("Rishi");
+		System.out.println("emp2--" + emp2 + ", hashcode : " + emp2.hashCode());
 		// By using Constructor class's newInstance() method
-
 		Constructor<Employee> constructor = Employee.class.getConstructor();
 		Employee emp3 = constructor.newInstance();
 		emp3.setName("Yogesh");

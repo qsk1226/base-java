@@ -127,7 +127,7 @@ public class TreeIterator {
 				cur = cur.left;
 			}
 			cur = stack.pop();
-			System.out.print(cur.val+"-->");
+			System.out.print(cur.val + "-->");
 			cur = cur.right;
 		}
 	}
@@ -136,17 +136,17 @@ public class TreeIterator {
 		LinkedList<TreeNode> stack = new LinkedList<>();
 		TreeNode currentRoot = root;
 		TreeNode rightRoot = null;
-		while (currentRoot != null || !stack.isEmpty()){
-			while (currentRoot != null){
+		while (currentRoot != null || !stack.isEmpty()) {
+			while (currentRoot != null) {
 				stack.push(currentRoot);
 				currentRoot = currentRoot.left;
 			}
 			currentRoot = stack.pop();
 			//当前节点没有右节点或上一个结点（已经输出的结点）是当前结点的右结点，则输出当前结点
-			while (currentRoot.right == null || currentRoot.right == rightRoot){
+			while (currentRoot.right == null || currentRoot.right == rightRoot) {
 				System.out.print(currentRoot.val + "-->");
 				rightRoot = currentRoot;
-				if (stack.isEmpty()){
+				if (stack.isEmpty()) {
 					return;
 				}
 				currentRoot = stack.pop();
@@ -159,24 +159,23 @@ public class TreeIterator {
 	public static List<Integer> postorderTraversal(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();
 		List<Integer> list = new LinkedList<>();
-		//TreeNode lastVisited = null;
-		while(!stack.isEmpty() || root != null) {
+		TreeNode lastVisited = null;
+		while (!stack.isEmpty() || root != null) {
 			if (root != null) {
 				stack.push(root);
 				root = root.left;
 			} else {
 				TreeNode node = stack.peek();
-				//if (node.right != null && lastVisited != node.right) {
-				if (node.right != null) {
+				if (node.right != null && lastVisited != node.right) {
 					root = node.right;
 				} else {
 					list.add(node.val);
-					System.out.print(node.val+"-->");
-					//lastVisited = stack.pop();
-					stack.pop();
+					System.out.print(node.val + "-->");
+					lastVisited = stack.pop();
 				}
 			}
 		}
+
 		return list;
 	}
 

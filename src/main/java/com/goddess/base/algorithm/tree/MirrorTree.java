@@ -38,4 +38,5 @@ public class MirrorTree {
 		}
 		return newRoot;
 	}
+
 }

@@ -1,7 +1,7 @@
 package com.goddess.base.algorithm.sort;
 
 /**
- * TODO
+ * 归并排序的时间复杂度为 O(nlogn)。
  *
  * @author qinshengke
  * @since 2021/5/8

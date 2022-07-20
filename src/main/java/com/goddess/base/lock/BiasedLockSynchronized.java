@@ -1,6 +1,6 @@
 package com.goddess.base.lock;
 
-import org.openjdk.jol.info.ClassLayout;
+//import org.openjdk.jol.info.ClassLayout;
 
 /**
  * 开启偏向锁并且偏向锁设置为立即生效
@@ -16,7 +16,7 @@ public class BiasedLockSynchronized {
 	//private static Object object = new Object();
 
 	public static void main(String[] args) throws InterruptedException {
-		Object object = new Object();
+		/*Object object = new Object();
 		System.out.println(" original -- " + ClassLayout.parseInstance(object).toPrintable());
 		// main线程 很大概率会限制性 开启偏向锁的时候
 		synchronized (object) {
@@ -53,7 +53,7 @@ public class BiasedLockSynchronized {
 		t2.join();
 		// t2 在t1中开启的时候，轻量级锁释放后，这里会看到 变成了无锁不可偏向 001
 		// t2 不在 t1 中开启，t1 和 t2 竞争 膨胀为 重量锁， 等待t1 和 t2 释放锁后， 锁依然是重量级锁
-		System.out.println("finally --" + ClassLayout.parseInstance(object).toPrintable());
+		System.out.println("finally --" + ClassLayout.parseInstance(object).toPrintable());*/
 
 	}
 

@@ -1,6 +1,6 @@
 package com.goddess.base.lock;
 
-import org.openjdk.jol.info.ClassLayout;
+//import org.openjdk.jol.info.ClassLayout;
 
 /**
  * 偏向锁重偏向
@@ -10,7 +10,7 @@ import org.openjdk.jol.info.ClassLayout;
  **/
 public class biasedLimitSyn {
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		Object obj = new Object();
 
 		for (int i = 0; i < 10; i++) {
@@ -29,5 +29,5 @@ public class biasedLimitSyn {
 		}
 
 		System.out.println("xxxxxx---" + ClassLayout.parseInstance(obj).toPrintable());
-	}
+	}*/
 }

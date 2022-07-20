@@ -10,7 +10,7 @@ package com.goddess.base.algorithm.sort;
  * @author qinshengke
  * @since 2021/5/7
  **/
-public class 堆排序 {
+public class HeapSort {
 
 	public int[] sortArray(int[] nums) {
 		int len = nums.length;
@@ -76,7 +76,7 @@ public class 堆排序 {
 
 	public static void main(String[] args) {
 		int[] arr = new int[]{3,5,4,7,8,9,10,1,2,6};
-		堆排序 x = new 堆排序();
+		HeapSort x = new HeapSort();
 		x.sortArray(arr);
 	}
 }

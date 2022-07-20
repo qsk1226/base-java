@@ -12,7 +12,7 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		int[] arr = new int[]{0, 11, 1, 33, 2, 9, 13, 44, 5};
-		int[] xx = quickSort(arr, 0, arr.length - 1);
+		int[] xx = quick(arr, 0, arr.length - 1);
 		System.out.println(Arrays.toString(xx));
 	}
 
@@ -36,6 +36,20 @@ public class QuickSort {
 		return array;
 	}
 
+	public static int[] quick(int[] nums, int low, int high) {
+		if (low > high) return nums;
+		int i = low, j = high;
+
+		while (i < j) {
+			while (i < j && nums[j] >= nums[low]) j--;
+			while (i < j && nums[i] <= nums[low]) i++;
+			swap(nums, i, j);
+		}
+		swap(nums, i, low);
+		quick(nums, low, i - 1);
+		quick(nums, i + 1, high);
+		return nums;
+	}
 	private static void swap(int[] nums, int i, int j) {
 		int tmp = nums[i];
 		nums[i] = nums[j];

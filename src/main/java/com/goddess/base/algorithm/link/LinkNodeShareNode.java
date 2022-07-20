@@ -45,8 +45,8 @@ public class LinkNodeShareNode {
 		//head2.next.next.next.next.next = n6;
 
 		ListNode x = linkNodeShareNode(head, head2);
-		if (x!=null)
-		System.out.println(x.val);
+		if (x != null)
+			System.out.println(x.val);
 
 	}
 

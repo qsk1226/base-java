@@ -16,6 +16,7 @@ public class LinkReversedPerK {
 	public static ListNode reversePerK(ListNode head, int k) {
 		ListNode newHead = new ListNode(0);
 		newHead.next = head;
+
 		ListNode pre = newHead;
 		ListNode end = newHead;
 

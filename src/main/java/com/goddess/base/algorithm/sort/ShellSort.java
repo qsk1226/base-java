@@ -5,12 +5,12 @@ import com.goddess.base.algorithm.array.SortTestHelper;
 import java.util.Arrays;
 
 /**
- * 希尔排序
+ * 希尔排序时间复杂度是 O(n^(1.3-2))，空间复杂度为常数阶 O(1)
  *
  * @author qinshengke
  * @since 2021/3/3
  **/
-public class 希尔排序 {
+public class ShellSort {
 
 	public static void main(String[] args) {
 		int[] ints = SortTestHelper.generateRandomArray(20, 30);
